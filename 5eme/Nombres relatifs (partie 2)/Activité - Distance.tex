@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{xargs}
+\usetikzlibrary{calc}
+
+\newcommand{\exerciceEspacement}{0.6em}
+
+% Arguments:
+%   - (optionel, défaut = 1) taille des graduations
+%   - Abscisse minimale
+%   - Abscisse maximale
+%   - (optionel, défaut = 0) hauteur de la droite 
+\newcommandx{\DroiteGraduee}[4][1=1, 4=0]{
+	\pgfmathtruncatemacro{\INTERNALDroiteGradueeLength}{#3 - #2}
+	\pgfmathtruncatemacro{\INTERNALDroiteGradueeSecondStep}{#1 + #2}
+
+	\draw[\myArrow] (-5.5,#4) -- ++(11, 0);
+
+	\foreach \x in {#2,\INTERNALDroiteGradueeSecondStep,...,#3} {
+		\draw
+		(\x * 10 / \INTERNALDroiteGradueeLength - #2 * 10 / \INTERNALDroiteGradueeLength - 5,#4)
+		-- ++(0,-0.2) node[below] {\x};
+	}
+}
+
+\TitreDActivite{Activité : Distances}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercice}\
+
+	\begin{center}
+		\begin{tikzpicture}[scale=0.9]
+			\coordinate (A) at (-4,0);
+			\coordinate (B) at (-1,0);
+			\coordinate (C) at (3,0);
+
+			\DroiteGraduee{-5}{5}
+
+			\foreach \p in {A,B,C} {
+					\node at (\p) {×};
+					\node[above] at (\p) {$\p$};
+				}
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{enumerate}
+		\item Quelle est la distance entre $A$ et $B$ ? ........
+		\item Quelle est la distance entre $B$ et $C$ ? ........
+		\item Quelle est la distance entre $A$ et $C$ ? ........
+		\item On place un point $D$ d'abscisse $20$. Quelle est la distance entre $B$ et $D$ ? ........
+		\item On place un point $E$ d'abscisse $200$. Quelle est la distance entre $C$ et $E$ ? ........
+	\end{enumerate}
+\end{exercice}
+
+\vspace{\exerciceEspacement}
+
+\begin{exercice}\
+
+	Répond \textbf{sans} dessiner de droite !
+
+	On place trois points sur une droite :
+	\begin{itemize}
+		\item $A$ d'abscisse $24$.
+		\item $B$ d'abscisse $-8$.
+		\item $C$ d'abscisse $15$.
+	\end{itemize}
+	\begin{enumerate}
+		\item Quelle est la distance entre $A$ et $B$ ? ........
+		\item      Quelle est la distance entre $B$ et $C$ ? ........
+		\item      Quelle est la distance entre $A$ et $C$ ? ........
+	\end{enumerate}
+\end{exercice}
+
+\vspace{\exerciceEspacement}
+
+\begin{exercice}\
+
+	On place sur une droite :
+	\begin{itemize}
+		\item Un point $A$ d'abscisse $8$.
+		\item Un point $B$, à $50$ unités à \uline{droite} de $A$.
+		\item Un point $C$, à $15$ unités à \uline{gauche} de $B$.
+		\item Un point $D$, à $25$ unités à \uline{gauche} de $C$.
+	\end{itemize}
+
+
+	Quelle est la distance entre $A$ et $D$ ? ........
+\end{exercice}
+
+\vspace{\exerciceEspacement}
+
+\begin{exercice}\
+
+	Une personne se promène le long d'une droite, et effectue une série de mouvement très précise :
+
+	\begin{itemize}
+		\item Tout d'abord, elle se place en $0$.
+		\item Elle \textbf{avance} de $80$ pas.
+		\item Elle \textbf{recule} de $160$ pas.
+		\item Elle \textbf{recule} de $120$ pas.
+		\item Elle \textbf{avance} de $240$ pas.
+		\item Puis, \uline{elle se retourne}.
+		\item Elle \textbf{avance} de $40$ pas.
+		\item Elle \textbf{recule} de $80$ pas.
+	\end{itemize}
+
+	Écrire une expression qui correspond à tous ces mouvements :
+	\vspace{0.4em}
+	\begin{center}
+		............................
+	\end{center}
+	\vspace{0.4em}
+
+	Quelle est alors sa position d'arrivée ? .........
+\end{exercice}
+
+\end{document}

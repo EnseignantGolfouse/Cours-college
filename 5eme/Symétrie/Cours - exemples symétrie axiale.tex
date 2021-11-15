@@ -1,0 +1,132 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\title{Chapitre 3 : Symétrie}
+\date{}
+\author{}
+
+\begin{luacode}
+require "5eme.symetrie"
+function draw_dashed(p1, p2)
+	tex.print("\\draw[dashed] (", p1.x, ",", p1.y, ") -- (", p2.x, ",", p2.y,");")
+end
+\end{luacode}
+
+\begin{document}
+
+\Copy{Exemples}{
+	\begin{exemple}
+		\begin{tikzpicture}
+			\directlua{
+			local axis = {
+					p1 = {x = 3.8, y = 2},
+					p2 = {x = 3.8, y = 6},
+				}
+			local points = {
+			{x = 2, y = 5},
+			{x = 2, y = 4},
+			{x = 1, y = 4},
+			{x = 1.5, y = 3.5},
+			{x = 2.5, y = 3.5},
+			{x = 3, y = 4},
+			{x = 2, y = 4},
+			{x = 2, y = 4.2},
+			{x = 1.2, y = 4.2},
+			{x = 2, y = 5},
+			}
+			points_symetriques = symetrie_axiale(axis, points)
+			tikz_draw_points(points)
+			tikz_draw_points(points_symetriques)
+			draw_axis(axis, nil)
+			draw_dashed(points[6], points_symetriques[6])
+			}
+			\node[color=red] at (5.6, 3) {Axe de symétrie};
+
+			\draw[black,thick] (3.8,4.2) -- ++(0.2,0) -- ++(0,-0.2);
+
+			\draw[black,thick] (3.3,4.1) -- ++(0.2,-0.2);
+			\draw[black,thick] (3.4,4.1) -- ++(0.2,-0.2);
+
+			\draw[black,thick] (4.15,4.1) -- ++(0.2,-0.2);
+			\draw[black,thick] (4.25,4.1) -- ++(0.2,-0.2);
+		\end{tikzpicture} \hspace{4em}
+		\begin{tikzpicture}
+			\directlua{
+			local axis = {
+					p1 = {x = 3, y = 2},
+					p2 = {x = 5, y = 6},
+				}
+			local head = {
+			{x = 0.8, y = 4.4},
+			{x = 1, y = 5},
+			{x = 1.05, y = 5},
+			{x = 1.2, y = 5.4},
+			{x = 1.35, y = 5},
+			{x = 1, y = 5},
+			{x = 2.35, y = 5},
+			{x = 2.2, y = 5.4},
+			{x = 2.05, y = 5},
+			{x = 2.4, y = 5},
+			{x = 2.6, y = 4.4},
+			{x = 2, y = 3.8},
+			{x = 1.4, y = 3.8},
+			{x = 0.8, y = 4.4},
+			}
+			local nose = {
+			{x = 1.7, y = 4.3},
+			{x = 1.8, y = 4.4},
+			{x = 1.6, y = 4.4},
+			{x = 1.7, y = 4.3},
+			}
+			local mustache1 = {
+			{x = 1.8, y = 4.3},
+			{x = 2, y = 4.1},
+			}
+			local mustache2 = {
+			{x = 1.82, y = 4.34},
+			{x = 2.04, y = 4.2},
+			}
+			local mustache3 = {
+			{x = 1.6, y = 4.3},
+			{x = 1.4, y = 4.1},
+			}
+			local mustache4 = {
+			{x = 1.58, y = 4.34},
+			{x = 1.36, y = 4.2},
+			}
+			local head_symetrique = symetrie_axiale(axis, head)
+			tikz_draw_points(head)
+			tikz_draw_points(nose)
+			tikz_draw_points(mustache1)
+			tikz_draw_points(mustache2)
+			tikz_draw_points(mustache3)
+			tikz_draw_points(mustache4)
+			tikz_draw_points(head_symetrique)
+			tikz_draw_points(symetrie_axiale(axis, nose))
+			tikz_draw_points(symetrie_axiale(axis, mustache1))
+			tikz_draw_points(symetrie_axiale(axis, mustache2))
+			tikz_draw_points(symetrie_axiale(axis, mustache3))
+			tikz_draw_points(symetrie_axiale(axis, mustache4))
+			draw_axis(axis, "west")
+			draw_dashed(head[11], head_symetrique[11])
+			}
+			\draw[black,thick,rotate around={62.5:(4,4)}] (3.73,4.2) -- ++(0.2,0) -- ++(0,-0.2);
+
+			\draw[black,thick] (3.2,4.23) -- ++(0.1,-0.3);
+			\draw[black,thick] (3.3,4.2) -- ++(0.1,-0.3);
+
+			\draw[black,thick] (4.5,3.59) -- ++(0.1,-0.3);
+			\draw[black,thick] (4.6,3.56) -- ++(0.1,-0.3);
+		\end{tikzpicture}
+	\end{exemple}
+}
+
+\Paste{Exemples}
+
+\Paste{Exemples}
+
+\Paste{Exemples}
+
+\end{document}

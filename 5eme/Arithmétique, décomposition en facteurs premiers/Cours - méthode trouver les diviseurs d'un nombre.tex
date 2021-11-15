@@ -1,0 +1,82 @@
+\documentclass[a4paper]{article}
+
+\usepackage{préambule}
+
+%%%%%%%%%%%%%%%%%%
+
+\title{Méthode : trouver les diviseurs premiers d'un nombre}
+\date{}
+
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\maketitle
+
+\begin{methode}[Décomposer un nombre en nombres premiers]
+	On dessine une colonne, dans laquelle on met le nombre à décomposer.
+
+	Puis on cherche le \textit{plus petit diviseur premier} du nombre en bas à gauche, et on l'écrit à droite. On calcule le \textbf{quotient} de la division euclidienne de ce nombre par le diviseur trouvé, et on le place en bas de la colonne de gauche.
+
+	Et ce jusqu'à ce qu'il n'y ai plus que 1 au bas de la colonne de gauche.
+
+	Les nombres dans la colonne de droite forment alors la \textbf{décomposition en facteurs premiers} du nombre.
+\end{methode}
+
+\begin{exemple}
+	On cherche à décomposer $21$ :
+	\begin{itemize}
+		\setlength\itemsep{0.4em}
+		\item[∙] \begin{tabular}{c|c}
+			      21 &
+		      \end{tabular}
+		\item[∙] \begin{tabular}{c|c}
+			      21 & 3 \\
+			      7  &
+		      \end{tabular} (car $3 × 7 = 21$)
+		\item[∙] \begin{tabular}{c|c}
+			      21 & 3 \\
+			      7  & 7 \\
+			      1  &
+		      \end{tabular}
+	\end{itemize}
+
+	On obtient ainsi $$ 21 = 3 × 7 $$
+\end{exemple}
+
+\begin{exemple}
+	On cherche à décomposer $60$ :
+	\begin{itemize}
+		\setlength\itemsep{0.4em}
+		\item[∙] \begin{tabular}{c|c}
+			      60 &
+		      \end{tabular}
+		\item[∙] \begin{tabular}{c|c}
+			      60 & 2 \\
+			      30 &
+		      \end{tabular} (car $2 × 30 = 60$)
+		\item[∙] \begin{tabular}{c|c}
+			      60 & 2 \\
+			      30 & 2 \\
+			      15 &
+		      \end{tabular} (car $2 × 15 = 30$)
+		\item[∙] \begin{tabular}{c|c}
+			      60 & 2 \\
+			      30 & 2 \\
+			      15 & 3 \\
+			      5  &
+		      \end{tabular} (car $3 × 5 = 15$)
+		\item[∙] \begin{tabular}{c|c}
+			      60 & 2 \\
+			      30 & 2 \\
+			      15 & 3 \\
+			      5  & 5 \\
+			      1  &
+		      \end{tabular}
+	\end{itemize}
+
+	On obtient ainsi $$ 60 = 2 × 2 × 3 × 5 $$
+\end{exemple}
+
+\end{document}

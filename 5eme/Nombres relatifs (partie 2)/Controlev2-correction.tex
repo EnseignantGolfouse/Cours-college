@@ -1,0 +1,23 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{préambule}
+\usetikzlibrary{calc}
+\usepackage{subfiles}
+
+\newcommand{\correction}[1]{
+	\ifdefined\modeCorrection
+		{\color{red}#1}
+	\else
+	\fi
+}
+
+\TitreDEvaluation{Contrôle : opérations sur les nombres relatifs}
+\author{}
+\date{8 juin}
+
+\begin{document}
+
+\newcommand{\modeCorrection}{}
+\subfile{Controlev2}
+
+\end{document}

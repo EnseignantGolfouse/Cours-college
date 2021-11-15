@@ -1,0 +1,54 @@
+\documentclass[a4paper,10pt]{beamer}
+
+\usepackage{préambule}
+\usetikzlibrary{calc}
+
+\title{Aires}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+	Reproduit ces figures dans ton cahier d'exercices, et donne leurs \textbf{aires} :
+
+	\begin{center}
+		\newcommand{\FigureAWidth}{1.5}
+		\newcommand{\FigureAHeigth}{1}
+		\newcommand{\FigureBWidth}{1.575}
+		\newcommand{\FigureBHeigth}{2}
+		\newcommand{\FigureCWidth}{2}
+		\newcommand{\FigureCHeigth}{2}
+		\newcommand{\FigureDRadius}{1}
+
+		\begin{tikzpicture}
+			\coordinate (FigureA) at (0,0);
+			\coordinate (FigureB) at (4.5,0);
+			\coordinate (FigureC) at (0,-4);
+			\coordinate (FigureD) at (4.5,-4);
+
+			\draw (FigureA) rectangle ++(\FigureAWidth,\FigureAHeigth);
+			\draw[<->] (FigureA) ++(-0.2,0) -- node[midway,left] {$3$cm} ++(0,\FigureAHeigth);
+			\draw[<->] (FigureA) ++(0,-0.2) -- node[midway,below] {$4,5$cm} ++(\FigureAWidth,0);
+			\node at ($(FigureA) + (\FigureAWidth / 2,-1)$) {Aire = .........};
+
+			\draw (FigureB) rectangle ++(\FigureBWidth,\FigureBHeigth);
+			\draw[<->] (FigureB) ++(-0.2,0) -- node[midway,left] {$16$cm} ++(0,\FigureBHeigth);
+			\draw[<->] (FigureB) ++(0,-0.2) -- node[midway,below] {$12,5$cm} ++(\FigureBWidth,0);
+			\node at ($(FigureB) + (\FigureBWidth / 2,-1)$) {Aire = .........};
+
+			\draw (FigureC) -- ++(\FigureCWidth,0) -- ++(-\FigureCWidth / 2,\FigureCHeigth) -- cycle;
+			\draw[<->] (FigureC) ++(-0.2,0) -- node[midway,left] {$8$cm} ++(0,\FigureCHeigth);
+			\draw[<->] (FigureC) ++(0,-0.2) -- node[midway,below] {$5$cm} ++(\FigureCWidth,0);
+			\node at ($(FigureC) + (\FigureCWidth / 2,-1)$) {Aire = .........};
+
+			\draw ($(FigureD) + (\FigureDRadius,\FigureDRadius)$) circle (\FigureDRadius);
+			\draw ($(FigureD) + (\FigureDRadius,\FigureDRadius)$) -- ++(0,\FigureDRadius);
+			\node at ($(FigureD) + (\FigureDRadius,\FigureDRadius)$) {×};
+			\draw[<->] ($(FigureD) + (2*\FigureDRadius,\FigureDRadius)$) ++(0.2,0) -- node[midway,right] {$6$cm} ++(0,\FigureDRadius);
+			\node at ($(FigureD) + (\FigureDRadius,-1)$) {Aire = .........};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\end{document}

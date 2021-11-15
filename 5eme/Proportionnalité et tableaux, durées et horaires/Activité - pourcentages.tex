@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usetikzlibrary{positioning}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+{\scriptsize colle dans ton cahier d'exercices, et écrit dans ton cahier} \vspace{0.5em}
+
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+	\end{center}
+}
+\makeatother
+
+\title{Activité: pourcentages}
+\date{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{attention}[frametitle={Exercice 1}]
+	On a dans un entrepôt des boites empilées les unes sur les autres :
+
+	\begin{itemize}
+		\item la première fait 4 centimètres de côté.
+		\item la deuxième, posée sur la première, fait $50\%$ de la taille de la première.
+		\item la troisième, posée \textbf{à droite} de la première, fait $125\%$ de la taille de la première.
+		\item la quatrième, posée sur la troisième, fait $40\%$ de la taille de la troisième.
+	\end{itemize}
+
+	Dessine toutes ces boîtes sur ton cahier d'exercices.
+\end{attention}
+
+\begin{attention}[frametitle={Exercice 2}]
+	Une peintre veut faire de gigantesque toiles. Pour cela, elle fabrique elle-même ses couleurs, à partir de peinture \uline{rouge}, \uline{verte}, \uline{bleue} et \uline{noire}.
+
+	La peintre a fourni les proportions de chaque couleur, ainsi que la quantité de noir : \vspace{1em}
+
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		                & Rouge   & Vert    & Bleu    & Noir    &  & Quantité de noir \\
+		                & (en \%) & (en \%) & (en \%) & (en \%) &  & (en litres)      \\ \hline
+		Fuschia         & 32      & 8       & 20      & 40      &  & 20               \\ \hline
+		Or              & 33      & 22      & 0       & 45      &  & 15               \\ \hline
+		Azur            & 4       & 17      & 26      & 53      &  & 26.5             \\ \hline
+		Jaune           & 33      & 33      & 0       & 34      &  & 10               \\ \hline
+		Argile          & 31      & 31      & 32      & 6       &  & 12               \\ \hline
+		Indigo          & 16      & 4       & 32      & 48      &  & 12               \\ \hline
+		Gris anthracite & 6       & 6       & 6       & 82      &  & 41               \\ \hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+
+	\begin{center}
+		(⚠ Ce n'est pas un tableau de proportionnalité, juste un tableau normal !)
+	\end{center}
+	\vspace{0.5em}
+
+	Pour chacune des couleurs demandées, calcule combien de litres de rouge, de vert, de bleu et de noir sont nécessaires.
+\end{attention}
+
+\end{document}

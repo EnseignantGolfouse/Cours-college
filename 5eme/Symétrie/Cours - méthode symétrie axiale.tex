@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\begin{document}
+\begin{methode}
+	% Takes 'point_x', 'axis_x'
+	\newcommand\mySymetricToAxis[2]{
+		\directlua{
+			local arg1 = token.scan_argument()
+			local arg2 = token.scan_argument()
+			tex.print(2 * tonumber(arg2) - tonumber(arg1))
+		}
+		{#1}{#2}
+	}
+	Pour faire le symétrique par rapport à un axe :
+	\begin{enumerate}
+		\item Pour chaque point sur la figure d'origine, trace une ligne passant par ce point, \textbf{perpendiculaire} à l'axe de symétrie.
+
+		      \newcommand{\Ax}{0}
+		      \newcommand{\Ay}{2}
+		      \newcommand{\Bx}{1}
+		      \newcommand{\By}{1}
+		      \newcommand{\Cx}{0}
+		      \newcommand{\Cy}{0}
+
+		      \newcommand{\mycoordinates}{
+			      \coordinate (A) at (\Ax,\Ay);
+			      \coordinate (B) at (\Bx,\By);
+			      \coordinate (C) at (\Cx,\Cy);
+			      \coordinate (A_mid) at (3,\Ay);
+			      \coordinate (B_mid) at (3,\By);
+			      \coordinate (C_mid) at (3,\Cy);
+			      \coordinate (A') at (\mySymetricToAxis{\Ax}{3},\Ay);
+			      \coordinate (B') at (\mySymetricToAxis{\Bx}{3},\By);
+			      \coordinate (C') at (\mySymetricToAxis{\Cx}{3},\Cy);
+		      }
+
+		      \begin{tikzpicture}
+			      \mycoordinates
+
+			      \draw[fill=gray] (A) circle (2pt) node[anchor=south east] {A};
+			      \draw[fill=gray] (B) circle (2pt) node[anchor=south west] {B};
+			      \draw[fill=gray] (C) circle (2pt) node[anchor=south east] {C};
+			      \draw (A) -- (B);
+			      \draw (B) -- (C);
+			      \draw[color=red] (3,-1) -- (3,3);
+
+			      \draw[dashed] (-1,\Ay) -- (7,\Ay);
+
+			      \draw ([xshift=-0.2cm] A_mid) -- ++(0,0.2) -- ++(0.2,0);
+		      \end{tikzpicture}
+		\item Puis, place un point \textbf{à la même distance} de l'autre côté de l'axe.
+
+		      \begin{tikzpicture}
+			      \mycoordinates
+
+			      \draw[fill=gray] (A) circle (2pt) node[anchor=south east] {A};
+			      \draw[fill=gray] (B) circle (2pt) node[anchor=south west] {B};
+			      \draw[fill=gray] (C) circle (2pt) node[anchor=south east] {C};
+			      \draw (A) -- (B);
+			      \draw (B) -- (C);
+			      \draw[color=red] (3,-1) -- (3,3);
+
+			      \draw[dashed] (-1,\Ay) -- (7,\Ay);
+
+			      \draw ([xshift=-0.2cm] A_mid) -- ++(0,0.2) -- ++(0.2,0);
+
+			      \draw (1.4,2.2) -- (1.6,1.8);
+			      \draw (4.3,2.2) -- (4.5,1.8);
+
+			      \draw[fill=gray] (A') circle (2pt) node[anchor=south west] {A'};
+		      \end{tikzpicture}
+		\item Fait de même pour les autres point :
+
+		      \begin{tikzpicture}
+			      \mycoordinates
+
+			      \draw[fill=gray] (A) circle (2pt) node[anchor=south east] {A};
+			      \draw[fill=gray] (B) circle (2pt) node[anchor=south west] {B};
+			      \draw[fill=gray] (C) circle (2pt) node[anchor=south east] {C};
+			      \draw (A) -- (B);
+			      \draw (B) -- (C);
+			      \draw[color=red] (3,-1) -- (3,3);
+
+			      \draw[dashed] (-1,\Ay) -- (7,\Ay);
+			      \draw[dashed] (-1,\By) -- (7,\By);
+			      \draw[dashed] (-1,\Cy) -- (7,\Cy);
+
+			      \draw ([xshift=-0.2cm] A_mid) -- ++(0,0.2) -- ++(0.2,0);
+			      \draw ([xshift=-0.2cm] B_mid) -- ++(0,0.2) -- ++(0.2,0);
+			      \draw ([xshift=-0.2cm] C_mid) -- ++(0,0.2) -- ++(0.2,0);
+
+			      \draw (1.4,2.2) -- (1.6,1.8);
+			      \draw (4.3,2.2) -- (4.5,1.8);
+
+			      \draw (2,1.2) -- (2.2,0.8);
+			      \draw (2.1,1.2) -- (2.3,0.8);
+			      \draw (3.7,1.2) -- (3.9,0.8);
+			      \draw (3.8,1.2) -- (4,0.8);
+
+			      \draw (1.2,0.2) -- (1.4,-0.2);
+			      \draw (1.3,0.2) -- (1.5,-0.2);
+			      \draw (1.4,0.2) -- (1.6,-0.2);
+			      \draw (4.3,0.2) -- (4.5,-0.2);
+			      \draw (4.4,0.2) -- (4.6,-0.2);
+			      \draw (4.5,0.2) -- (4.7,-0.2);
+
+			      \draw[fill=gray] (A') circle (2pt) node[anchor=south west] {A'};
+			      \draw[fill=gray] (B') circle (2pt) node[anchor=south east] {B'};
+			      \draw[fill=gray] (C') circle (2pt) node[anchor=south west] {C'};
+		      \end{tikzpicture}
+		\item Enfin, relie les points qui étaient reliés sur la figure d'origine.
+
+		      \begin{tikzpicture}
+			      \mycoordinates
+
+			      \draw[fill=gray] (A) circle (2pt) node[anchor=south east] {A};
+			      \draw[fill=gray] (B) circle (2pt) node[anchor=south west] {B};
+			      \draw[fill=gray] (C) circle (2pt) node[anchor=south east] {C};
+			      \draw (A) -- (B);
+			      \draw (B) -- (C);
+			      \draw[color=red] (3,-1) -- (3,3);
+
+			      \draw[dashed] (-1,\Ay) -- (7,\Ay);
+			      \draw[dashed] (-1,\By) -- (7,\By);
+			      \draw[dashed] (-1,\Cy) -- (7,\Cy);
+
+			      \draw ([xshift=-0.2cm] A_mid) -- ++(0,0.2) -- ++(0.2,0);
+			      \draw ([xshift=-0.2cm] B_mid) -- ++(0,0.2) -- ++(0.2,0);
+			      \draw ([xshift=-0.2cm] C_mid) -- ++(0,0.2) -- ++(0.2,0);
+
+			      \draw (1.4,2.2) -- (1.6,1.8);
+			      \draw (4.3,2.2) -- (4.5,1.8);
+
+			      \draw (2,1.2) -- (2.2,0.8);
+			      \draw (2.1,1.2) -- (2.3,0.8);
+			      \draw (3.7,1.2) -- (3.9,0.8);
+			      \draw (3.8,1.2) -- (4,0.8);
+
+			      \draw (1.2,0.2) -- (1.4,-0.2);
+			      \draw (1.3,0.2) -- (1.5,-0.2);
+			      \draw (1.4,0.2) -- (1.6,-0.2);
+			      \draw (4.3,0.2) -- (4.5,-0.2);
+			      \draw (4.4,0.2) -- (4.6,-0.2);
+			      \draw (4.5,0.2) -- (4.7,-0.2);
+
+			      \draw[fill=gray] (A') circle (2pt) node[anchor=west] {A'};
+			      \draw[fill=gray] (B') circle (2pt) node[anchor=south east] {B'};
+			      \draw[fill=gray] (C') circle (2pt) node[anchor=west] {C'};
+			      \draw (A') -- (B');
+			      \draw (B') -- (C');
+		      \end{tikzpicture}
+	\end{enumerate}
+\end{methode}
+\end{document}

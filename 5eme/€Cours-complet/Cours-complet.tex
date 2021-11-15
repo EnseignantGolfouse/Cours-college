@@ -1,0 +1,87 @@
+\documentclass[a4paper,oneside,notitlepage,11pt]{book}
+
+\usepackage{préambule}
+\usepackage{préambule-figures}
+\usetikzlibrary{angles,arrows,arrows.meta,calc,intersections,quotes,positioning}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newmdenv[style=importantstyle]{myimportantboxinternal}
+\newcommand{\myimportantbox}[3][]{
+	\begin{myimportantboxinternal}[
+		frametitlebackgroundcolor=#2!70,
+		frametitlerulecolor=#2,
+		#1]
+		#3
+	\end{myimportantboxinternal}
+}
+
+\makeatletter
+\newcommand{\titleorchapter}[2]{
+	\ifthenelse{\inmaindocument=1}{
+		\newcommand{\MyCurrentChapterName}{#1}
+	}{
+		\title{Chapitre #2 : #1}
+		\date{}
+		\author{}
+	}
+}
+\newcounter{maketitleAlready}
+\setcounter{maketitleAlready}{0}
+\newcommand{\maketitleCours}{
+	\ifthenelse{\inmaindocument=1}{
+		\chapter{\MyCurrentChapterName}
+	}{\maketitle}
+}
+\makeatother
+
+\newcommand{\inmaindocument}{0}
+
+\title{Cours de Mathématiques}
+\date{2021-2022}
+\author{5ème}
+
+\usepackage{subfiles} % inclure des fichiers auxiliaires
+
+\begin{document}
+
+\renewcommand{\inmaindocument}{1}
+
+\maketitle
+
+\subfile{../Arithmétique, décomposition en facteurs premiers/Cours}
+\newpage
+
+\subfile{../Priorités opératoires/Cours}
+\newpage
+
+\subfile{../Symétrie/Cours}
+\newpage
+
+\subfile{../Proportionnalité et tableaux, durées et horaires/Cours}
+\newpage
+
+\subfile{../Nombres relatifs (partie 1)/Cours}
+\newpage
+
+\subfile{../Angles, angles dans un triangle/Cours}
+\newpage
+
+\subfile{../Fraction : comparer et prendre la fraction d'un nombre/Cours}
+\newpage
+
+\subfile{../Triangles et cercles : inégalité triangulaire, médiatrice, hauteurs/Cours}
+\newpage
+
+\subfile{../Calcul littéral/Cours}
+\newpage
+
+\subfile{../Série de données/Cours}
+\newpage
+
+\subfile{../Nombres relatifs (partie 2)/Cours}
+\newpage
+
+\subfile{../Solides de l'espace, volume/Cours}
+
+\end{document}

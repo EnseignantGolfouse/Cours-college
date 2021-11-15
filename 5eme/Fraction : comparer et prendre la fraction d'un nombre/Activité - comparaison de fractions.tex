@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\geometry{left=1cm}
+
+\setlength{\columnsep}{0.8cm}
+
+\newcommand{\DessineCorrection}{0}
+\ifthenelse{\DessineCorrection=1}{
+	\renewcommand{\phantom}[1]{{\color{red}#1}}
+}
+
+\TitreDActivite{Activité : Comparaison de fractions}
+
+\begin{document}
+
+\Copy{Activité}{
+	\maketitle
+
+	\begin{exercice}
+		Deux amies se partagent un paquet de cartes.
+
+		Élise en prend $\dfrac{7}{12}$. Fanny en prend $\dfrac{5}{12}$.
+
+		Qui a pris le plus de cartes ?
+
+		\vspace{1em}\dotfill \phantom{Élise}
+	\end{exercice}
+
+	\begin{exercice}
+		Trois amis se partagent un nombre de billes, que l'on ne connait pas.
+
+		Gaétan prend $\dfrac{1}{4}$ des billes. \vspace{0.5em}
+
+		Hayan prend $\dfrac{3}{10}$ des billes. \vspace{0.5em}
+
+		Isaac prend $\dfrac{9}{40}$ des billes. \vspace{0.5em}
+
+		Qui a eu le plus de billes ? Qui en a eu le moins ? Comment as-tu trouvé ?
+
+		\vspace{1em}\dotfill \phantom{}
+
+		\vspace{1em}\dotfill
+
+		\phantom{Hayan, puis Isaac, car 3/10 > 1/4 > 9/40}
+
+		\awesomebox[violet]{2pt}{\faRocket}{violet}{
+			\textbf{Pour aller plus loin}
+
+			Quelle part de billes reste-t-il ?
+		}
+	\end{exercice}
+}
+
+\newpage \setcounter{exercice}{0}
+
+\Paste{Activité}
+
+\end{document}

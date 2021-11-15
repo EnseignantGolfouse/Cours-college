@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\addtolength{\oddsidemargin}{-0.5cm}
+\addtolength{\evensidemargin}{-0.5cm}
+\addtolength{\textwidth}{1cm}
+
+\title{Introduction à la symétrie centrale}
+\date{}
+\author{}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+{\tiny colle dans ton cahier d'exercices}
+
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+		\vspace{1em}
+	\end{center}
+}
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+\begin{attention}[frametitle={⚠ Attention ⚠}]
+	\center
+	Dessine au \textbf{crayon à papier} !
+\end{attention}
+
+On va faire le symétrique d'un poisson.
+\begin{enumerate}
+	\item Fait le symétrique du poisson selon l'axe $(d₁)$.
+	\item Fait le symétrique du \textbf{deuxième} poisson selon l'axe $(d₂)$.
+
+	      \begin{tikzpicture}[scale=1,c/.style={insert path={circle[radius=1.5pt]}}]
+		      \draw[step=1.0,gray,ultra thin] (0,0) grid (10,10);
+		      \draw[black,thick] (5,-0.2) -- (5,10.2) node[anchor=south]{$(d₁)$};
+		      \draw[black,thick] (-0.2,5) -- (10.2,5) node[anchor=west]{$(d₂)$};
+
+		      \filldraw[black] (5,5) node[anchor=north west] {$O$} circle (2pt);
+
+		      \draw[black,ultra thick]
+		      (8,6) [c] node[anchor=south] {A}
+		      -- ++(-1,2) [c] node[anchor=south west] {B}
+		      -- ++(-1,0) [c] node[anchor=south] {C}
+		      -- ++(1,1) [c] node[anchor=south] {D}
+		      -- ++(0,-1)
+		      -- ++(2,-1) [c] node[anchor=south] {E}
+		      -- ++(0,-1) [c] node[anchor=west] {F}
+		      -- ++(-1,0)
+		      -- ++(1,1);
+
+		      %   \draw[black,ultra thick] (4,8) -- ++(-1,1) -- ++(0,-1) -- ++(-2,-1) -- ++ (0,-1) -- ++ (1,0) -- ++(1,2) -- cycle;
+
+		      %   \draw[black,ultra thick] (4,2) -- ++(-1,-1) -- ++(0,1) -- ++(-2,1) -- ++ (0,1) -- ++ (1,0) -- ++(1,-2) -- cycle;
+
+		      %   \draw[color=red] (9,6) -- (1,4);
+	      \end{tikzpicture}
+	\item Peut-on passer en un seul coup du premier au troisième poisson ? \vspace{2em}
+	\item Trace une ligne qui relie le nez du premier poisson (le point F) au nez du troisième. Quelle position occupe le point $O$ sur cette ligne ? \vspace{2em}
+
+	      Vérifie que c'est également vrai pour les points A, B et C.
+\end{enumerate}
+
+\begin{attention}[frametitle={}]
+	On dit que les deux poissons sont \textbf{symétriques par rapport au \uline{point} $O$}.
+\end{attention}
+
+\end{document}

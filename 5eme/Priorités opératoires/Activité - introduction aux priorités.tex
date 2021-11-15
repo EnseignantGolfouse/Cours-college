@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+
+\usepackage{préambule}
+
+\title{Activité : Introduction aux priorités}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercice*}
+	Faire les calculs suivants, et dire de quelle opération il s'agit : \\[0.5em]
+
+	\begin{tabular}{lcl}
+		$A = 1 + 2 × 5$       & \phantom{space} & $A$ est ............... \\[3.5em]
+		$B = 3,9 - 1,2 - 1$   & \phantom{space} & $B$ est ............... \\[3.5em]
+		$C = 2 × 3 + 1,2 × 5$ & \phantom{space} & $C$ est ............... \\[3.5em]
+		$D = 8 ÷ 2 - 1,5 × 2$ & \phantom{space} & $D$ est ............... \\[3.5em]
+	\end{tabular}
+\end{exercice*}
+
+\begin{greybox}[frametitle={RAPPEL : Opérations sur les nombres à virgule}]
+	Pour faire une addition/soustraction sur les nombres à virgules :
+
+	Il faut aligner la virgule des nombres qu'on veut additionner ou soustraire, puis faire l'opération normalement.
+
+	Par exemple:
+	\renewcommand{\arraystretch}{1.5}
+	$$\begin{array}{lllll}
+			  & 1 & 2  , & 5 & 0 \\
+			+ &   & 3  , & 3 & 6 \\ \cline{0-4}
+			  & 1 & 5  , & 8 & 6
+		\end{array}$$
+	\renewcommand{\arraystretch}{1}
+
+	Pour les multiplications, c'est plus compliqué : il faut compter combien de chiffres après la virgule il y a dans chacun des facteurs. Cela nous indique combien de chiffres il doit y avoir après la virgule dans le résultat.
+
+	Par exemple :
+	\renewcommand{\arraystretch}{1.5}
+	$$\begin{array}{lllll}
+			  &   &      & 2  , & 6 \\
+			× &   &      & 7  , & 1 \\ \cline{0-4}
+			  & 1 & 8  , & 4    & 6
+		\end{array}$$
+	\renewcommand{\arraystretch}{1}
+\end{greybox}
+
+\end{document}

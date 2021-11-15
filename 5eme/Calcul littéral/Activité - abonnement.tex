@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\newcommand{\myarrow}{-{Latex[length=3mm, width=2mm]}}
+
+\TitreDActivite{Activité : Abonnement}
+
+\begin{document}
+
+\maketitle
+
+\begin{enonce}
+	Ivan et Kevin vont souvent regarder des films ensemble.
+
+	\begin{itemize}
+		\item Ivan paie à chaque fois sa place à plein tarif : 7€ la place.
+		\item Kevin, lui, a un abonnement : il l'a acheté 20€, mais il paie chaque place 4,50€.
+	\end{itemize}
+\end{enonce}
+
+\begin{enumerate}
+	\item Si ils vont voir 3 films :
+	      \begin{enumerate}
+		      \item Combien paie Ivan ? \dotfill % 21€
+		      \item Combien paie Kevin ? \dotfill % 33,50€
+		      \item Lequel paie le moins ? \dotfill % Ivan
+	      \end{enumerate}
+	\item Si ils vont voir 10 films :
+	      \begin{enumerate}
+		      \item Combien paie Ivan ? \dotfill % 70€
+		      \item Combien paie Kevin ? \dotfill % 65€
+		      \item Lequel paie le moins ? \dotfill % Kevin
+	      \end{enumerate}
+	\item On appelle $n$ le nombre de films qu'ils vont voir.
+	      \begin{enumerate}
+		      \item Écrire une expression pour le prix que paie Ivan. \dotfill
+		      \item Écrire une expression pour le prix que paie Kevin. \dotfill
+	      \end{enumerate}
+	\item Remplir le tableau suivant :
+
+	      \begin{center}
+		      \renewcommand{\arraystretch}{1.5}
+		      \begin{tabular}{|c|c|c|}
+			      \hline
+			      Nombre de places & Prix pour Ivan & Prix pour Kevin
+			      \\ \hline
+			      3                &                &
+			      \\ \hline
+			      4                &                &
+			      \\ \hline
+			      5                &                &
+			      \\ \hline
+			      6                &                &
+			      \\ \hline
+			      7                &                &
+			      \\ \hline
+			      8                &                &
+			      \\ \hline
+			      9                &                &
+			      \\ \hline
+			      10               &                &
+			      \\ \hline
+		      \end{tabular}
+	      \end{center}
+
+	      Y-a-t'il un nombre de places, pour lequel les deux paie le même prix ? \dotfill
+	\item Les expressions $7n$ et $20 + 4{,}5n$ sont elles toujours égales ?
+	\item Les expressions $7n$ et $20 + 4{,}5n$ sont elles égales pour un $n$ particulier ?
+\end{enumerate}
+
+\end{document}

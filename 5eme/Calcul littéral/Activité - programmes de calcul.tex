@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\setmathfont[range=it]{Tex Gyre Schola Math}
+
+\geometry{left=1cm}
+\setlength{\columnsep}{0.8cm}
+
+\TitreDActivite{Activité : Programmes de calcul}
+
+\begin{document}
+
+\Copy{Contenu}{
+	\maketitle
+
+	Voici un programme de calcul :
+
+	\begin{greybox}
+		\texttt{Choisir un nombre.}
+
+		\texttt{Ajouter 5.}
+
+		\texttt{Multiplier le résultat obtenu par 3.}
+
+		\texttt{Soustraire 8 au résultat obtenu.}
+	\end{greybox}
+
+	\begin{exercice}\
+
+		\begin{enumerate}
+			\item Quel est le résultat si le nombre choisi est 6 ? \dotfill % 25
+			\item Quel est le résultat si le nombre choisi est 11 ? \dotfill % 40
+		\end{enumerate}
+	\end{exercice}
+
+	\begin{exercice}\
+
+		Parmi les expressions suivantes, laquelle correspond au programme ?
+
+		\setlength{\tabcolsep}{1.8em}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{ll}
+			1. $x + 5 × 3 − 8$   & 2. $(x + 5) × 3 − 8$ \\
+			3. $x + (5 × 3 − 8)$ & 4. $(x − 8) × 3 + 5$
+		\end{tabular}
+	\end{exercice}
+}
+
+\newpage
+
+\setcounter{exercice}{0}
+\Paste{Contenu}
+
+\end{document}

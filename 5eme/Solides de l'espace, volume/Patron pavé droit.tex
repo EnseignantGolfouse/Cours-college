@@ -1,0 +1,47 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{préambule-figures}
+\usetikzlibrary{calc,positioning}
+
+\title{Patron d'un pavé droit}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+On fait le patron du pavé droit suivant :
+
+\begin{center}
+	\newcommand{\Longeur}{4cm}
+	\newcommand{\Largeur}{2cm}
+	\newcommand{\Profondeur}{5cm}
+	\begin{tikzpicture}
+		\paveDroit{\Largeur}{\Longeur}{(1,1)}
+
+		\draw[<->] (0,-0.2) -- node[midway,below] {$\Longeur$} ++(\Longeur,0);
+		\draw[<->] (-0.2,0) -- node[midway,left] {$\Largeur$} ++(0,\Largeur);
+		\draw[<->] (0.15cm + \Longeur,-0.15) -- node[midway,below right] {$\Profondeur$} ++(1,1);
+	\end{tikzpicture}
+	\vspace{1em}
+
+	\begin{tikzpicture}
+		\draw[\myArrow] (0,0) -- (0,-2);
+	\end{tikzpicture}
+	\vspace{1.5em}
+
+	\begin{tikzpicture}
+		\patronPaveDroit{\Largeur}{\Longeur}{\Profondeur}
+		
+		\draw[<->] (-0.2,0) -- node[midway,left] {$\Profondeur$} ++(0,-\Profondeur);
+		\draw[<->] (0,0.2) -- node[midway,above] {$\Longeur$} ++(\Longeur,0);
+		\draw[<->] (\Longeur + \Largeur - 0.2cm,0) -- node[midway,left] {$\Largeur$} ++(0,\Largeur);
+	\end{tikzpicture}
+\end{center}
+
+
+
+
+\end{document}

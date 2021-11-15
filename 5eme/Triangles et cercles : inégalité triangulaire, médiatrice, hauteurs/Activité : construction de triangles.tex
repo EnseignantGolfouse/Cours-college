@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\mdfdefinestyle{hypothesestyle}{
+    style=redstyle,
+    frametitle={Hypothèse},
+}
+\newmdenv[style=hypothesestyle]{hypothese}
+
+\newcommand{\DessineCorrection}{0}
+\ifthenelse{\DessineCorrection=1}{
+	\newcommand{\correction}[1]{{\color{red}#1}}
+}{
+	\newcommand{\correction}[1]{\dotfill}
+}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\TitreDActivite{Activité : contruction de triangles}
+
+\begin{document}
+
+\maketitle
+
+Dans l'activité précédente, on a formulé l'hypothèse :
+
+\begin{hypothese}
+	\begin{enumerate}
+		\item Si on a trois longueurs, telles que \correction{la somme de deux des longueurs}
+
+		      \correction{dépasse toujours la troisième},
+
+		      alors on peut construire un triangle dont les mesures des côtés sont ces trois longueurs.
+		\item À l'inverse, si \correction{la somme de deux des longueurs est plus petite que la}
+
+		      \correction{troisième},
+
+		      alors on ne peut pas construire le triangle.
+	\end{enumerate}
+\end{hypothese}
+
+\squared{Dans ton cahier d'exercices :}
+
+\subsection*{Partie 1}
+
+Choisit trois longueurs vérifiant le point 1. de l'hypothèse.
+
+\begin{itemize}
+	\item Place deux points A et B, telle que leur écart est la \uline{troisième} longueur.
+	\item Si on souhaite placer le point C, telle que la distance [AC] soit la \uline{première} longueur, dessine \textbf{tous} les endroits où pourrait se trouver C. (Indice : utilise un compas).
+	\item Fait de même pour que la distance [BC] soit la \uline{deuxième} longueur.
+	\item Que remarque-t'on ?
+\end{itemize}
+
+\subsection*{Partie 2}
+
+Choisit trois longueurs vérifiant le point 2. de l'hypothèse.
+
+\begin{itemize}
+	\item Place deux points A et B, telle que leur écart est la \uline{troisième} longueur.
+	\item Si on souhaite placer le point C, telle que la distance [AC] soit la \uline{première} longueur, dessine \textbf{tous} les endroits où pourrait se trouver C. (Indice : utilise un compas).
+	\item Fait de même pour que la distance [BC] soit la \uline{deuxième} longueur.
+	\item Que remarque-t'on ?
+\end{itemize}
+
+\end{document}

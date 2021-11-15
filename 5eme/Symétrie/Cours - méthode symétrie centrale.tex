@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\begin{document}
+
+\Copy{Methode}{
+	\begin{methode}
+		Pour faire le symétrique d'un point A par rapport à un centre O : \vspace{1em}
+
+		\begin{tikzpicture}
+			\coordinate (O) at (0,0);
+
+
+			\draw[fill] (O) circle (2pt) node[anchor=south west] {O};
+			\draw[fill] (O) ++(-1,1) circle (2pt) node[anchor=north east] {A};
+		\end{tikzpicture}
+		\begin{enumerate}
+			\item Trace la droite, qui part du point et passe par le centre :
+
+			      \begin{tikzpicture}
+				      \coordinate (O) at (0,0);
+				      \coordinate (A) at ([xshift=-1cm,yshift=1cm] O);
+
+
+				      \draw[fill] (O) circle (2pt) node[anchor=south west] {O};
+				      \draw[fill] (A) circle (2pt) node[anchor=north east] {A};
+				      \draw[dashed] (A) ++(-0.5,0.5) -- (O) -- ++(1.5,-1.5);
+			      \end{tikzpicture}
+			\item Place le symétrique du point A \textbf{à égale distance de O} :
+
+			      \begin{tikzpicture}
+				      \coordinate (O) at (0,0);
+				      \coordinate (A) at (-1,1);
+				      \coordinate (A_sym) at (1,-1);
+
+
+				      \draw[fill] (O) circle (2pt) node[anchor=south west] {O};
+				      \draw[fill] (A) circle (2pt) node[anchor=north east] {A};
+				      \draw[fill] (A_sym) circle (2pt) node[anchor=south west] {A'};
+				      \draw[dashed] (A) ++(-0.5,0.5) -- (O) -- ++(1.5,-1.5);
+
+				      \draw (-0.6,0.4) -- ++(0.2,0.2);
+				      \draw (-0.55,0.35) -- ++(0.2,0.2);
+
+				      \draw[rotate around={180:(O)}] (-0.6,0.4) -- ++(0.2,0.2);
+				      \draw[rotate around={180:(O)}] (-0.55,0.35) -- ++(0.2,0.2);
+			      \end{tikzpicture}
+
+			      Tu peux utiliser un \textbf{compas} pour cette étape !
+		\end{enumerate}
+	\end{methode}
+}
+
+\vspace{1.5em}
+\hrule
+\vspace{1em}
+
+\Paste{Methode}
+
+\end{document}

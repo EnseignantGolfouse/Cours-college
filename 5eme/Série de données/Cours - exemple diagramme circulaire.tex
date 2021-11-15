@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+\usetikzlibrary{quotes}
+
+\geometry{left=0cm}
+\setlength{\columnsep}{0.8cm}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{document}
+
+\Copy{exemple}{
+	\begin{exemple}
+		Voici la répartition des élèves d'un collège en LV2 :
+
+		\begin{center}
+			\begin{tabular}{|l|c|c|c|c|c|}
+				\hline
+				Langue       & Allemand & Italien & Espagnol & Chinois & \textbf{Total}
+				\\ \hline
+				Effectif     & 40       & 40      & 70       & 30      & 180
+				\\ \hline
+				Angle (en °) &          &         &          &         & 360
+				\\ \hline
+			\end{tabular}
+		\end{center}
+
+		\begin{center}
+			\begin{tikzpicture}[scale=1.2]
+				\pie[
+					text=inside,
+					hide number,
+					sum=auto
+				]
+				{
+					40/\ ,
+					40/\ ,
+					70/\ ,
+					30/\ 
+				}
+			\end{tikzpicture}
+		\end{center}
+	\end{exemple}
+}
+
+\newpage
+\Paste{exemple}
+
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass[a4paper,gray,11pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\addtolength{\textwidth}{2.5cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{1.5cm}
+
+\title{Activité : Symétrie axiale (bonus)}
+\date{}
+\author{}
+
+\begin{document}
+
+\Copy{Bonus}{
+	\begin{center}
+		\LARGE
+		Activité : Symétrie axiale (bonus)
+	\end{center}
+
+	\begin{minipage}{0.5\textwidth}
+		\begin{tikzpicture}
+			\node (Zone1) at (0,2) {};
+			\node[left of=Zone1] {Zone 1};
+			\node (Zone2) at (0,6) {};
+			\node[left of=Zone2] {Zone 2};
+			\node (Zone3) at (0,10) {};
+			\node[left of=Zone3] {Zone 3};
+
+			\draw[thin,gray] (0,0) grid (6,12);
+			\draw[thick,black] (-0.2,4) node[anchor=east] {$(d₁)$} -- (6.2,4);
+			\draw[thick,black] (-0.2,8) node[anchor=east] {$(d₂)$} -- (6.2,8);
+
+			\draw[very thick,black,fill=yellow] (2,1) -- ++(2,0) -- ++(-1,1) -- cycle;
+			\draw[very thick,black,fill=red] (2,1) -- ++(1,1) -- ++(-1,0) -- ++(0,1) -- ++(-1,-1) -- cycle;
+			\draw[very thick,black,fill=red] (3,2) -- ++(1,-1) -- ++(1,1) -- ++(-1,1) -- ++(0,-1) -- cycle;
+			\draw[very thick,black,fill=yellow] (3,2) -- ++(0,1) -- ++(-1,0) -- ++(0,-1) -- cycle;
+			\draw[very thick,black,fill=yellow] (3,2) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;
+
+			% \draw[very thick,black,fill=yellow] (2,7) -- ++(2,0) -- ++(-1,-1) -- cycle;
+			% \draw[very thick,black,fill=red] (2,7) -- ++(1,-1) -- ++(-1,0) -- ++(0,-1) -- ++(-1,1) -- cycle;
+			% \draw[very thick,black,fill=red] (3,6) -- ++(1,1) -- ++(1,-1) -- ++(-1,-1) -- ++(0,1) -- cycle;
+			% \draw[very thick,black,fill=yellow] (3,6) -- ++(0,-1) -- ++(-1,0) -- ++(0,1) -- cycle;
+			% \draw[very thick,black,fill=yellow] (3,6) -- ++(1,0) -- ++(0,-1) -- ++(-1,0) -- cycle;
+
+			% \draw[very thick,black,fill=yellow] (2,9) -- ++(2,0) -- ++(-1,1) -- cycle;
+			% \draw[very thick,black,fill=red] (2,9) -- ++(1,1) -- ++(-1,0) -- ++(0,1) -- ++(-1,-1) -- cycle;
+			% \draw[very thick,black,fill=red] (3,10) -- ++(1,-1) -- ++(1,1) -- ++(-1,1) -- ++(0,-1) -- cycle;
+			% \draw[very thick,black,fill=yellow] (3,10) -- ++(0,1) -- ++(-1,0) -- ++(0,-1) -- cycle;
+			% \draw[very thick,black,fill=yellow] (3,10) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;
+		\end{tikzpicture}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{enumerate}
+			\item Faire le symétrique de la figure par rapport à l'axe $(d₁)$, dans la zone 2.
+			\item Faire le symétrique de la \textbf{deuxième} figure par rapport à l'axe $(d₂)$, dans la zone 3.
+			\item Que voit-on à propos des figures dans les zones 1 et 3 ? \vspace{3em}
+			\item Que ce passerait-il si on rajoutait d'autres zones/axes de symétries ? \vspace{6em}
+
+			      Peut-on savoir (sans dessiner !) quelle figure la zone 254 contiendra-elle ? \vspace{6em}
+		\end{enumerate}
+	\end{minipage}
+}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\Paste{Bonus}
+
+\end{document}

@@ -1,0 +1,89 @@
+% !TEX root = ./Controlev1.tex
+\documentclass[Controlev1-correction]{subfiles}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercice}[(3 points)] Calculer les expressions suivantes, en détaillant les calculs :
+
+	\begin{align*}
+		A & = (+2) + (-6)             & B & = (+8) - (+7)            \\
+		  & \ \correction{= 2 - 6}    &   & \  \correction{= 8 - 7}  \\
+		  & \  \correction{= -4}      &   & \  \correction{= 1}      \\
+		\\
+		C & = (-9) + (+3)             & D & =  (-18) - (-5)          \\
+		  & \ \correction{= -9 + 3}   &   & \ \correction{= -18 + 5} \\
+		  & \ \correction{= -6}       &   & \ \correction{= -13}     \\
+		\\
+		E & = (-12) - (+38)           & F & =   (+8) - (-3,5)        \\
+		  & \ \correction{= -12 - 38} &   & \ \correction{= 8 + 3,5} \\
+		  & \ \correction{= -50}      &   & \ \correction{= 11,5}    \\
+	\end{align*}
+\end{exercice}
+
+\begin{exercice}[(8 points)] Calculer les expressions suivantes, en détaillant les calculs :
+
+	\begin{align*}
+		A & = -16 + 13 - 2 - 1 + 19 + 2               & B & = 7 - 59 + 13 - 21 + 59 - 9                \\
+		  & \ \correction{= 13 + 19 + 2 - 16 - 2 - 1} &   & \ \correction{= 7 + 13 + 59 - 59 - 21 - 9} \\
+		  & \ \correction{= 34 - 19}                  &   & \ \correction{= 7 + 13 - 21 - 9}           \\
+		  & \ \correction{= 15}                       &   & \ \correction{= 20 - 30}                   \\
+		  &                                           &   & \ \correction{= -10}                       \\
+		\\
+		C & = 9 - 5 - (-6) - 9 + 14 + (-3)            & D & = 4 - 5 + 2 - (-1 + 7 - 8)                 \\
+		  & \correction{= 9 + 6 + 14 - 5 - 9 - 3}     &   & \correction{= 4 - 5 + 2 - (-2)}            \\
+		  & \correction{= 29 - 17}                    &   & \correction{= 4 + 2 + 2 - 5}               \\
+		  & \correction{= 12}                         &   & \correction{= 8 - 5}                       \\
+		  &                                           &   & \correction{= 3}                           \\
+		\\
+	\end{align*}
+\end{exercice}
+
+\begin{exercice}[(3 points)]\
+
+	\begin{center}
+		\begin{tikzpicture}
+			\coordinate (A) at (-4,0);
+			\coordinate (B) at (-2,0);
+			\coordinate (C) at (3.5,0);
+
+			\draw[\myArrow] (-5.5,0) -- (5.5,0);
+
+			\foreach \x in {-5,...,5} {
+					\draw (\x,0) -- ++(0,-0.2);
+				}
+			\node[below] at (0,-0.15) {0};
+			\foreach \p/\x in {A/-4,B/-2,C/3.5} {
+					\node at (\x,0) {×};
+					\node[above] at (\x,0) {\p};
+					\node[below] at ($(\p) - (0,0.2)$) {$\x$};
+				}
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{enumerate}
+		\item Quelle est la distance entre A et B ? ........
+		\item Quelle est la distance entre A et C ? ........
+		\item On place un point D d'abscisse -15. Quelle est la distance entre B et D ? ........
+	\end{enumerate}
+\end{exercice}
+
+\begin{exercice}[(6 points)]
+
+	Calculer les expressions suivantes, sachant que $a = 4$, $b = -5$ et $c = -7$ :
+
+	\begin{align*}
+		A & = a + b - c                               & B & = -a - b - c                       \\
+		  & \correction{= (+4) + (-5) - (-7)}         &   & \correction{= -(+4) - (-5) - (-7)} \\
+		  & \correction{= 4 - 5 + 7}                  &   & \correction{= -4 + 5 + 7}          \\
+		  & \correction{= 6}                          &   & \correction{= 8}                   \\
+		C & = -a - b - b + c                          & D & = a - (b - c)                      \\
+		  & \correction{= -(+4) - (-5) - (-5) + (-7)} &   & \correction{= (+4) - (-5 - (-7))}  \\
+		  & \correction{= -4 + 5 + 5 - 7}             &   & \correction{= 4 - (-5 + 7)}        \\
+		  & \correction{= -1}                         &   & \correction{= 4 - 2}               \\
+		  &                                           &   & \correction{= 2}                   \\
+	\end{align*}
+\end{exercice}
+
+\end{document}

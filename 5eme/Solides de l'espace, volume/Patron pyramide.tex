@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{préambule-figures}
+\usetikzlibrary{calc,positioning}
+
+\title{Patron d'une pyramide}
+\author{}
+\date{}
+
+\newcommand{\simpleTrait}[1]{
+	\draw #1 ++(-0.05,-0.05) -- ++(0.1,0.1)
+}
+\newcommand{\doubleTraits}[1]{
+	\draw #1 ++(-0.075,-0.05) -- ++(0.1,0.1) ++(0.05,0) -- ++(-0.1,-0.1)
+}
+
+\begin{document}
+
+\maketitle
+
+Sur une feuille blanche, dessiner au crayon à papier le patron suivant :
+
+\newcommand{\RacineDeDeux}{1.4142135623730951}
+\newcommand{\RacineDeTrois}{1.7320508075688772}
+
+\begin{center}
+	\begin{tikzpicture}[scale=3.5]
+		\draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0) -- (1,-1) -- (1,0) -- (2,0) -- (1,1) -- ++(0,\RacineDeDeux) -- (0,1) -- (-\RacineDeDeux,0) -- (0,0);
+
+		\doubleTraits{(0.5,0)};
+		\doubleTraits{(1,0.5)};
+		\doubleTraits{(0,0.5)};
+		\doubleTraits{(0.5,1)};
+		\doubleTraits{(1.5,0)};
+		\doubleTraits{(1,-0.5)};
+
+		\simpleTrait{(0.5,-0.5)};
+		\simpleTrait{(1.5,0.5)};
+		\simpleTrait{(1,1.65)};
+		\simpleTrait{(-0.65,0)};
+
+		\draw (-0.7,0.5) circle (0.04);
+		\draw (0.5,1.7) circle (0.04);
+
+		\draw[<->] (1,-0.1) -- node[midway,below] {$5$ cm} ++(1,0);
+		\draw[<->] (1.1,1) -- node[midway,right] {$7,1$ cm} ++(0,\RacineDeDeux);
+		\draw[<->] (-\RacineDeDeux-0.02,0.07) -- node[midway,above left] {$8,7$ cm} ++(\RacineDeDeux,1);
+
+		\draw[red] (0,0) ++(0.08,0) -- ++(0,0.08) -- ++(-0.08,0)
+		(1,0) ++(-0.08,0) -- ++(0,0.08) -- ++(0.08,0)
+		(1,1) ++(-0.08,0) -- ++(0,-0.08) -- ++(0.08,0)
+		(0,1) ++(0.08,0) -- ++(0,-0.08) -- ++(-0.08,0)
+		
+		(0,0) ++(-0.08,0) -- ++(0,0.08) -- ++(0.08,0)
+		(1,0) ++(0.08,0) -- ++(0,0.08) -- ++(-0.08,0)
+		(1,0) ++(-0.08,0) -- ++(0,-0.08) -- ++(0.08,0)
+		(1,1) ++(-0.08,0) -- ++(0,0.08) -- ++(0.08,0);
+	\end{tikzpicture}
+\end{center}
+
+\end{document}

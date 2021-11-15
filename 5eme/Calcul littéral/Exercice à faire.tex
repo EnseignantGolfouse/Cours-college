@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{beamer}
+
+\usepackage{préambule}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand{\mysize}{\scriptsize}
+
+\newcommand{\myarrow}{{Latex[length=1mm, width=1mm]}-{Latex[length=1mm, width=1mm]}}
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{Exercice à faire}
+
+	\begin{center}
+		\begin{tikzpicture}
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (1,0);
+			\coordinate (C) at (2,0);
+			\coordinate (D) at (3,0);
+			\coordinate (E) at (6,0);
+			\coordinate (F) at (9,0);
+
+			\draw[|-|] (A) -- node {\mysize /} (B);
+			\draw[|-|] (B) -- node {\mysize /} (C);
+			\draw[|-|] (C) -- node {\mysize /} (D);
+			\draw[|-|] (D) -- node {\mysize //} (E);
+			\draw[|-|] (E) -- node {\mysize //} (F);
+
+			\draw[\myarrow] ($(A) - (0,0.5)$) -- node[below] {$x$} ($(B) - (0,0.5)$);
+
+			\draw[\myarrow] ($(D) - (0,0.5)$) -- node[below] {$2$} ($(E) - (0,0.5)$);
+		\end{tikzpicture}
+	\end{center}
+
+	Écrire la longueur totale du segment avec une expression.
+
+	\begin{center}
+		\begin{tikzpicture}
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (2,0);
+			\coordinate (C) at (4,0);
+			\coordinate (D) at (5,0);
+			\coordinate (E) at (7,0);
+			\coordinate (F) at (8,0);
+			\coordinate (G) at (10,0);
+
+			\draw[|-|] (A) -- node {\mysize /} (B);
+			\draw[|-|] (B) -- node {\mysize /} (C);
+			\draw[|-|] (C) -- node {\mysize //} (D);
+			\draw[|-|] (D) -- node {\mysize /} (E);
+			\draw[|-|] (E) -- node {\mysize //} (F);
+			\draw[|-|] (F) -- node {\mysize /} (G);
+
+			\draw[\myarrow] ($(A) - (0,0.5)$) -- node[below] {$y$} ($(C) - (0,0.5)$);
+
+			\draw[\myarrow] ($(C) - (0,0.5)$) -- node[below] {$1{,}5$} ($(D) - (0,0.5)$);
+		\end{tikzpicture}
+	\end{center}
+
+	Écrire la longueur totale du segment avec une expression.
+\end{frame}
+
+\end{document}

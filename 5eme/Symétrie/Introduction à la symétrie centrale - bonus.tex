@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt,landscape]{article}
+
+\usepackage{préambule}
+
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\evensidemargin}{-2cm}
+\addtolength{\textwidth}{4cm}
+
+\title{Symétrie axiale et frises}
+\date{}
+\author{}
+
+\makeatletter
+\newcommand{\mymaketitle}{%
+	{\tiny colle dans ton cahier d'exercices}
+	
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+		\vspace{1em}
+	\end{center}
+}
+\makeatother
+
+\begin{document}
+
+\mymaketitle
+
+\begin{enumerate}
+	\item Fait le symétrique de la figure par rapport à l'axe $(d₁)$.
+	\item Fait le symétrique \textbf{de la figure obtenue} par rapport à l'axe $(d₂)$.
+
+	      \begin{tikzpicture}
+		      \draw[ultra thin,gray] (0,0) grid ++(18,6);
+		      \draw[thick] (6,-0.2) -- ++(0,6.4) node[anchor=south] {$(d₁)$};
+		      \draw[thick] (12,-0.2) -- ++(0,6.4) node[anchor=south] {$(d₂)$};
+
+		      \draw[ultra thick] (1,1) -- ++(3,0) -- ++(0,0.25) -- ++(-0.5,0.25) -- ++(-0.5,1.5) -- ++(0.5,0.5) -- ++(-0.25,1)
+		      % oreilles
+		      ++(-0.25,0) -- ++(-0.25,0.5) -- ++(-0.25,-0.5) -- ++(-0.25,0.5) -- ++(-0.25,-0.5) ++(1.25,0)
+		      -- ++(-1.5,0) -- ++(0,-0.5) -- ++(0.25,-1) -- ++(-1,-2) -- ++(-0.5,2);
+	      \end{tikzpicture}
+	\item Que voit-on à propos des figures dans les zones 1 et 3 ? \vspace{3em}
+	\item Que ce passerait-il si on rajoutait d'autres zones/axes de symétries ? \vspace{6em}
+
+	      Peut-on savoir (sans dessiner !) quelle figure la zone 254 contiendra-elle ? \vspace{6em}
+\end{enumerate}
+
+\end{document}

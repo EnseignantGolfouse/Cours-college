@@ -1,0 +1,86 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+\usetikzlibrary{angles,quotes,intersections}
+
+\mdfdefinestyle{rappelstyle}{
+    style=greyboxstyle,
+    frametitle={Rappel},
+}
+\newmdenv[style=rappelstyle]{rappel}
+
+\title{Introduction}
+\date{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{vocabulaire}[(Rappel)]
+	\begin{itemize}
+		\item Deux droites sont \textbf{perpendiculaires} si elles forment un angle droit.
+		\item Deux droites sont \textbf{sécantes} si elles s'intersectent en un point.
+		\item Deux droites sont \textbf{parallèles} si elles ne s'intersectent jamais.
+	\end{itemize}
+\end{vocabulaire}
+
+\begin{center}
+	\begin{tikzpicture}
+		\draw[Green,name path=d4] (-4,3) node[above right] {(d₄)} -- (4,-3);
+		\draw[Green,name path=d8] (-3,-4) node[above left] {(d₈)} -- (3,4);
+		\draw[Green] (-0.4,0.3) -- (-0.1,0.7) -- (0.3,0.4);
+
+		\draw[blue,name path=d1] (-5,2) node[above right] {(d₁)} -- (7,0);
+		\draw[blue,name path=d3] (-5,-1) node[above right] {(d₃)} -- (7,-3);
+		\draw[name path=d6] (0.5,-5) node[left] {(d₆)} -- (2,4);
+		\draw[blue] (1,-2) ++(-0.3,0.05) -- ++(-0.05,-0.3) -- ++(0.3,-0.05);
+		\draw[blue] (1.48,0.9) ++(-0.3,0.05) -- ++(-0.05,-0.3) -- ++(0.3,-0.05);
+
+		\draw[name path=d2] (-5,0) -- (7,-2.5) node[above left] {(d₂)};
+
+		\draw[red,name path=d7] (-1,4) node[below right] {(d₇)} -- (-2,-5);
+		\draw[red,name path=d5] (3.2,4) node[below right] {(d₅)} -- (2,-5);
+	\end{tikzpicture}
+\end{center}
+
+Sur la figure ci-dessus :
+\begin{itemize}
+	\item (d₁) et (d₆) sont \textbf{perpendiculaires}.
+	\item (d₁) et (d₃) sont \textbf{parallèles}.
+	\item (d₁) et (d₂) ne sont \textbf{ni perpendiculaires, ni parallèles}.
+	\item (d₅) et (d₇) ne sont \textbf{ni perpendiculaires, ni parallèles}. On peut avoir l'impression qu'elles sont parallèles, mais il n'y a pas de notation sur la figure nous l'assurant.
+	\item (d₆) et (d₇) sont ne sont \textbf{ni perpendiculaires, ni parallèles}. On peut avoir l'impression qu'elles sont parallèles, mais il n'y a pas de notation sur la figure nous l'assurant.
+	\item (d₄) et (d₈) sont \textbf{perpendiculaires}.
+	\item (d₃) et (d₆) sont \textbf{perpendiculaires}.
+\end{itemize}
+
+\begin{greybox}
+	Deux droites sont parallèles si une \textbf{troisième droite} est perpendiculaire à chacune de ces deux droites.
+\end{greybox}
+
+\section*{dézoom de la figure}
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.12]
+		\draw[Green,name path=d4] (-4,3) -- (4,-3);
+		\draw[Green,name path=d8] (-3,-4) -- (3,4);
+		\draw[Green] (-0.4,0.3) -- (-0.1,0.7) -- (0.3,0.4);
+
+		\draw[blue,name path=d1] (-5,2) -- (7,0);
+		\draw[blue,name path=d3] (-5,-1) -- (7,-3);
+		% (1, 6)
+		\draw[name path=d6] (-34,-212) -- (2,4);
+		\draw[blue] (1,-2) ++(-0.3,0.05) -- ++(-0.05,-0.3) -- ++(0.3,-0.05);
+		\draw[blue] (1.48,0.9) ++(-0.3,0.05) -- ++(-0.05,-0.3) -- ++(0.3,-0.05);
+
+		\draw[name path=d2] (-5,0) -- (7,-2.5);
+
+		\draw[red,name path=d7] (-1,4) -- (-25,-212);
+		\draw[red,name path=d5] (3.2,4) -- (-25.6,-212);
+	\end{tikzpicture}
+\end{center}
+
+
+
+\end{document}

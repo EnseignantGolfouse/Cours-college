@@ -1,0 +1,195 @@
+\documentclass[a4paper,12pt]{beamer}
+
+\usepackage{préambule}
+
+\usetikzlibrary{calc,positioning}
+
+\title{Exercices symétrie centrale}
+\date{}
+\author{}
+
+\begin{document}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate[rotate around={180:(O)}] (A') at (A);
+		\coordinate[rotate around={180:(O)}] (B') at (B);
+
+		\node[right = 0.2cm of O] {O};
+		\node[above left = 0.2cm of A] {A};
+		\node[above left = 0.2cm of B] {B};
+		\draw[fill] (O) circle (2pt);
+		\draw[fill] (A) circle (2pt);
+		\draw[fill] (B) circle (2pt);
+		\draw ($(A) + (A) - (B)$) -- ($(B) + (B) - (A)$) node[anchor=south] {$(d)$};
+
+		% \node[above left = 0.2cm of A'] {A'};
+		% \node[above left = 0.2cm of B'] {B'};
+		% \draw[fill] (A') circle (2pt);
+		% \draw[fill] (B') circle (2pt);
+		\draw[opacity=0] ($(A') + (A') - (B')$) -- ($(B') + (B') - (A')$) node[anchor=south] {$(d')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate[rotate around={180:(O)}] (A') at (A);
+		\coordinate[rotate around={180:(O)}] (B') at (B);
+
+		\node[right = 0.2cm of O] {O};
+		\node[above left = 0.2cm of A] {A};
+		\node[above left = 0.2cm of B] {B};
+		\draw[fill] (O) circle (2pt);
+		\draw[fill] (A) circle (2pt);
+		\draw[fill] (B) circle (2pt);
+		\draw ($(A) + (A) - (B)$) -- ($(B) + (B) - (A)$) node[anchor=south] {$(d)$};
+
+		\node[above left = 0.2cm of A'] {A'};
+		\node[above left = 0.2cm of B'] {B'};
+		\draw[fill] (A') circle (2pt);
+		\draw[fill] (B') circle (2pt);
+		\draw[dashed] (A) -- (A');
+		\draw[dashed] (B) -- (B');
+		\draw[opacity=0] ($(A') + (A') - (B')$) -- ($(B') + (B') - (A')$) node[anchor=south] {$(d')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate[rotate around={180:(O)}] (A') at (A);
+		\coordinate[rotate around={180:(O)}] (B') at (B);
+
+		\node[right = 0.2cm of O] {O};
+		\node[above left = 0.2cm of A] {A};
+		\node[above left = 0.2cm of B] {B};
+		\draw[fill] (O) circle (2pt);
+		\draw[fill] (A) circle (2pt);
+		\draw[fill] (B) circle (2pt);
+		\draw ($(A) + (A) - (B)$) -- ($(B) + (B) - (A)$) node[anchor=south] {$(d)$};
+
+		\node[above left = 0.2cm of A'] {A'};
+		\node[above left = 0.2cm of B'] {B'};
+		\draw[fill] (A') circle (2pt);
+		\draw[fill] (B') circle (2pt);
+		\draw ($(A') + (A') - (B')$) -- ($(B') + (B') - (A')$) node[anchor=south] {$(d')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate (I) at (0,0);
+		\coordinate (J) at (3,-1);
+		\coordinate[rotate around={180:(I)}] (C) at (A);
+		\coordinate[rotate around={180:(I)}] (D) at (B);
+		\coordinate[rotate around={180:(J)}] (E) at (A);
+		\coordinate[rotate around={180:(J)}] (F) at (B);
+
+		\foreach \P in {A,B,I,J} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+
+		% \foreach \P in {C,D,E,F} {
+		% 		\node[above = 0.2cm of \P] {\P};
+		% 		\draw[fill] (\P) circle (2pt);
+		% 	}
+		\draw[opacity=0] (A) -- (B) node[anchor=west] {$(d)$};
+		\draw[opacity=0] (C) -- (D) node[anchor=east] {$(d')$};
+		\draw[opacity=0] (E) -- (F) node[anchor=east] {$(d'')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate (I) at (0,0);
+		\coordinate (J) at (3,-1);
+		\coordinate[rotate around={180:(I)}] (C) at (A);
+		\coordinate[rotate around={180:(I)}] (D) at (B);
+		\coordinate[rotate around={180:(J)}] (E) at (A);
+		\coordinate[rotate around={180:(J)}] (F) at (B);
+
+		\foreach \P in {A,B,I,J} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+
+		\foreach \P in {C,D} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+		\draw[dashed] (A) -- (C);
+		\draw[dashed] (B) -- (D);
+		\draw[opacity=0] (A) -- (B) node[anchor=west] {$(d)$};
+		\draw[opacity=0] (C) -- (D) node[anchor=east] {$(d')$};
+		\draw[opacity=0] (E) -- (F) node[anchor=east] {$(d'')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate (I) at (0,0);
+		\coordinate (J) at (3,-1);
+		\coordinate[rotate around={180:(I)}] (C) at (A);
+		\coordinate[rotate around={180:(I)}] (D) at (B);
+		\coordinate[rotate around={180:(J)}] (E) at (A);
+		\coordinate[rotate around={180:(J)}] (F) at (B);
+
+		\foreach \P in {A,B,I,J} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+
+		\foreach \P in {C,D,E,F} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+		\draw[dashed] (A) -- (E);
+		\draw[dashed] (B) -- (F);
+		\draw[opacity=0] (A) -- (B) node[anchor=west] {$(d)$};
+		\draw[opacity=0] (C) -- (D) node[anchor=east] {$(d')$};
+		\draw[opacity=0] (E) -- (F) node[anchor=east] {$(d'')$};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate (I) at (0,0);
+		\coordinate (J) at (3,-1);
+		\coordinate[rotate around={180:(I)}] (C) at (A);
+		\coordinate[rotate around={180:(I)}] (D) at (B);
+		\coordinate[rotate around={180:(J)}] (E) at (A);
+		\coordinate[rotate around={180:(J)}] (F) at (B);
+
+		\foreach \P in {A,B,I,J} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+
+		\foreach \P in {C,D,E,F} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+		\draw (A) -- (B);
+		\draw (C) -- (D);
+		\draw (E) -- (F) ;
+	\end{tikzpicture}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[a4paper,10pt]{beamer}
+
+\usepackage{préambule}
+
+\begin{document}
+
+\begin{frame}
+	\frametitle{Exercice 1}
+
+	\begin{itemize}
+		\item $50\%$ de 4 centimètres fait 2 centimètres.
+		\item $125\%$ de 4 centimètres fait 5 centimètres.
+		\item $40\%$ de 5 centimètres fait 2 centimètres.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exercice 1}
+
+	\begin{tikzpicture}
+		\draw (0,0) -- ++(4,0) -- ++(0,4) -- ++(-4,0) -- cycle;
+		\draw (1,4) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+		\draw (5,0) -- ++(5,0) -- ++(0,5) -- ++(-5,0) -- cycle;
+		\draw (6,5) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+	\end{tikzpicture}
+\end{frame}
+
+{\small
+\renewcommand{\arraystretch}{1.5}
+\begin{frame}
+	\frametitle{Exercice 2}
+
+	\hspace*{-0.5cm}\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                & Rouge       & Vert        & Bleu        & Noir        & Coefficient de   \\
+		                & (en litres) & (en litres) & (en litres) & (en litres) & proportionnalité \\ \hline
+		Fuschia         &             &             &             & 20          &                  \\ \hline
+		Or              &             &             &             & 15          &                  \\ \hline
+		Azur            &             &             &             & 26,5        &                  \\ \hline
+		Jaune           &             &             &             & 34          &                  \\ \hline
+		Argile          &             &             &             & 12          &                  \\ \hline
+		Indigo          &             &             &             & 12          &                  \\ \hline
+		Gris anthracite &             &             &             & 41          &                  \\ \hline
+	\end{tabular}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exercice 2}
+
+	\hspace*{-0.5cm}\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                & Rouge       & Vert        & Bleu        & Noir        & Coefficient de   \\
+		                & (en litres) & (en litres) & (en litres) & (en litres) & proportionnalité \\ \hline
+		Fuschia         &             &             &             & 20          & 0,5              \\ \hline
+		Or              &             &             &             & 15          & 0,33             \\ \hline
+		Azur            &             &             &             & 26,5        & 0,5              \\ \hline
+		Jaune           &             &             &             & 34          & 0,29             \\ \hline
+		Argile          &             &             &             & 12          & 2                \\ \hline
+		Indigo          &             &             &             & 12          & 0,25             \\ \hline
+		Gris anthracite &             &             &             & 41          & 0,5              \\ \hline
+	\end{tabular}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exercice 2}
+
+	\hspace*{-0.5cm}\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                & Rouge       & Vert        & Bleu        & Noir        & Coefficient de   \\
+		                & (en litres) & (en litres) & (en litres) & (en litres) & proportionnalité \\ \hline
+		Fuschia         & 16          & 4           & 10          & 20          & 0,5              \\ \hline
+		Or              & 11          & 7,3         & 0           & 15          & 0,33             \\ \hline
+		Azur            & 2           & 8,5         & 13          & 26,5        & 0,5              \\ \hline
+		Jaune           & 9,7         & 9,7         & 0           & 10          & 0,29             \\ \hline
+		Argile          & 15,5        & 15,5        & 16          & 12          & 2                \\ \hline
+		Indigo          & 4           & 1           & 8           & 12          & 0,25             \\ \hline
+		Gris anthracite & 3           & 3           & 3           & 41          & 0,5              \\ \hline
+	\end{tabular}
+\end{frame}
+}
+
+\renewcommand{\arraystretch}{1}
+
+
+\end{document}

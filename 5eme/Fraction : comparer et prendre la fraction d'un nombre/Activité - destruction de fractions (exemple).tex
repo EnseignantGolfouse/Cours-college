@@ -1,0 +1,46 @@
+\documentclass[a4paper,11pt]{beamer}
+
+\usepackage{préambule}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+
+\begin{frame}
+	\onslide<1>{On a la fraction $\dfrac{13}{30}$, et les nombres $1$, $2$ et $3$ :}
+
+	\onslide<2>{\textbf{Joueur 1} enlève 1 au numérateur.}
+
+	\onslide<3>{\textbf{Joueur 2} simplifie la fraction par 2, puis enlève 3 au dénominateur.}
+
+	\onslide<4>{\textbf{Joueur 1} simplifie la fraction par 3, puis enlève 2 au numérateur.}
+
+	\vspace{1em}
+
+	\begin{multicols}{2}
+		\begin{tikzpicture}
+			\draw (-2,1) rectangle (2,-1);
+			\node (N2) {2};
+			\node[left=of N2] (N1) {1};
+			\node[right=of N2] (N3) {3};
+
+			\node<2-> at (N1) {×};
+			\node<3-> at (N3) {×};
+			\node<4-> at (N2) {×};
+		\end{tikzpicture}
+
+		\columnbreak
+
+		\begin{itemize}
+			\item[Début :]     $\dfrac{13}{30}$ \vspace{0.5em}
+			\item<2->[Tour 1 :] $→ \dfrac{12}{30}$ \vspace{0.5em}
+			\item<3->[Tour 2 :] $→ \dfrac{6}{15} → \dfrac{6}{12}$ \vspace{0.5em}
+			\item<4->[Tour 3 :] $→ \dfrac{2}{4} → \dfrac{0}{4}$ \vspace{0.5em}
+			
+			Le joueur 1 gagne.
+		\end{itemize}
+	\end{multicols}
+\end{frame}
+
+
+\end{document}

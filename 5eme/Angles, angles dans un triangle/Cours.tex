@@ -1,0 +1,237 @@
+% !TEX root = ./Cours.tex
+\documentclass[../€Cours-complet/Cours-complet]{subfiles}
+
+\titleorchapter{Angles, angles dans un triangles}{6}
+
+\begin{document}
+
+\maketitleCours
+
+\section*{Rappel sur les angles}
+
+\begin{greybox}[frametitle={Rappel}]
+	Si on a trois points $A$, $B$ et $C$, l'angle que forme les droites $(AB)$ et $(BC)$ est appelé $\widehat{ABC}$.
+
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (0,0);
+		\coordinate (C) at (2,2.5);
+
+		\draw pic[draw,fill=green!30,angle radius=0.6cm,"$\widehat{ABC}$" shift={(0mm,0.6cm)}] {angle=C--B--A};
+		\draw (-1.5,1.5) -- (1,-1);
+		\draw (-1,-1.25) -- (3,3.75);
+
+		\node at (A) {×};
+		\node at (B) {×};
+		\node at (C) {×};
+		\node[above] at (A) {$A$};
+		\node[below] at (B) {$B$};
+		\node[above left] at (C) {$C$};
+	\end{tikzpicture}
+\end{greybox}
+
+\begin{greybox}[frametitle={Rappel}]
+	Si on a deux droite $(d₁)$ et $(d₂)$ qui s'intersectent en $D$, l'angle que forment ces deux droite est appelé $\widehat{d₁Dd₂}$.
+
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (0,0);
+		\coordinate (C) at (3,1.5);
+
+		\draw pic[draw,fill=blue!30,angle radius=0.6cm,"$\widehat{ABC}$" shift={(0mm,0.6cm)}] {angle=C--B--A};
+		\draw (-1.5,1.5) node[above] {$d₁$} -- (1,-1);
+		\draw (-2,-1) node[above] {$d₂$} -- (C);
+
+		\node at (B) {×};
+		\node[below] at (B) {$D$};
+	\end{tikzpicture}
+\end{greybox}
+
+\begin{greybox}[frametitle={Rappel}]
+	Le nombre qui indique l'écartement d'un angle est appelé sa \textbf{mesure}.
+\end{greybox}
+
+\section{Angles alternes-internes}
+
+% TODO: trouver une meilleure explication.
+\begin{cours}[Angles alternes-internes]
+	Soit $(d₁)$ et $(d₂)$ des droites, et $(s)$ une droite qui intersecte $(d₁)$ et $(d₂)$ en $A$ et $B$.
+
+	Alors, deux angles sont \textbf{alternes-internes} si:
+	\begin{itemize}
+		\item Ils ont pour sommet $A$ et $B$.
+		\item Ils sont chacun d'un côté différent de la droite $(s)$.
+		\item Ils sont entre les droites $(d₁)$ et $(d₂)$.
+	\end{itemize}
+
+	\begin{tikzpicture}
+		\coordinate (d1start) at (-2,1);
+		\coordinate (d1end) at (4,2);
+		\coordinate (d2start) at (-2,-1);
+		\coordinate (d2end) at (4,-2);
+		\coordinate (sstart) at (3,3.166);
+		\coordinate (send) at (-1,-2.833);
+		\coordinate (A) at (2,10 / 6);
+		\coordinate (B) at (0,-8 / 6);
+
+		\draw pic[draw,fill=orange!30,angle radius=0.5cm] {angle=B--A--d1end};
+		\draw pic[draw,fill=violet!30,angle radius=0.5cm] {angle=A--B--d2start};
+
+		\draw (d1start) node[above] {$(d₁)$} -- (d1end);
+		\draw (d2start) node[above] {$(d₂)$} -- (d2end);
+		\draw (sstart) node[left] {$(s)$} -- (send);
+	\end{tikzpicture}
+\end{cours}
+
+\begin{exemple}
+	\begin{tikzpicture}
+		\coordinate (d1-1) at (-2,3);
+		\coordinate (A) at (-1,2.7);
+		\coordinate (B) at (2,1.8);
+		\coordinate (d1-4) at (3,1.5);
+
+		\path[name path=d-1] (d1-1) -- (d1-4);
+		\node at (A) {×};
+		\node[above] at (A) {$A$};
+		\node at (B) {×};
+		\node[above] at (B) {$B$};
+
+		\coordinate (d2-1) at (-2,0);
+		\coordinate (C) at (-1,-0.1);
+		\coordinate (D) at (2.5,-0.45);
+		\coordinate (d2-4) at (3,-0.5);
+
+		\path[name path=d-2] (d2-1) -- (d2-4);
+		\node at (C) {×};
+		\node[above] at (C) {$C$};
+		\node at (D) {×};
+		\node[above] at (D) {$D$};
+
+		\path[name path=s] (0,3.5) -- (2,-1);
+
+		\path[name intersections={of= d-1 and s,by=E}];
+		\path[name intersections={of= d-2 and s,by=F}];
+
+		\draw pic[draw,fill=red!60,angle radius=0.4cm] {angle=A--E--F};
+		\draw pic[draw,fill=red!60,angle radius=0.4cm] {angle=D--F--E};
+		\draw pic[draw,fill=blue!60,angle radius=0.5cm] {angle=F--E--B};
+		\draw pic[draw,fill=blue!60,angle radius=0.5cm] {angle=E--F--C};
+
+		\node at (E) {×};
+		\node[above right] at (E) {$E$};
+		\node at (F) {×};
+		\node[below left] at (F) {$F$};
+
+		\draw (d1-1) -- (d1-4);
+		\draw (d2-1) -- (d2-4);
+		\draw (0,3.5) -- (2,-1);
+	\end{tikzpicture}
+
+	Sur cette figure, les angles
+	\begin{itemize}
+		\item {\color{red} $\widehat{FEA}$} et {\color{red} $\widehat{EFD}$} sont alternes-internes.
+		\item {\color{blue} $\widehat{BEF}$} et {\color{blue} $\widehat{CFE}$} sont alternes-internes.
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}
+	Si deux droites parallèles sont coupées par une sécante, les angles alternes-internes ont la même mesure.
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\node at (-2,3) {(d₁) // (d₂)};
+			\coordinate (d2start) at (-2,-1);
+
+			\draw[name path=d1] (-2,1) node[above] (d1start) {(d₁)} -- (3.5,2) coordinate (d1end);
+			\draw[name path=d2] (d2start) node [above] {(d₂)} -- (3.5,0) coordinate (d2end);
+			\draw[name path=s] (2.5,2.5) node[left] {(s)} -- (-0.5,-1);
+
+			\path[name intersections={of= d1 and s,by=A}];
+			\path[name intersections={of= d2 and s,by=B}];
+
+			\draw pic[draw,fill=Green!30,angle radius=0.5cm] {angle=B--A--d1end};
+			\draw pic[draw,fill=Green!30,angle radius=0.5cm] {angle=A--B--d2start};
+		\end{tikzpicture}
+	\end{minipage} \hspace{1em}
+	\begin{minipage}{0.45\textwidth}
+		Les droites (d₁) et (d₂) sont parallèles, donc les angles {\color{Green} verts} ont la même mesure.
+	\end{minipage}
+\end{exemple}
+
+\section{Droites parallèles}
+
+\begin{cours}
+	Si deux droites (dont on ne sais pas encore si elles sont parallèles ou non) sont coupées par une sécante, et que les angles alternes-internes ont la même mesure, \textit{alors} les droites sont parallèles.
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}[c]{0.45\textwidth}
+		\begin{tikzpicture}
+			\coordinate (d1start) at (-2,1);
+			\coordinate (d1end) at (3.5,2.5);
+			\coordinate (d2start) at (-2,-1);
+			\coordinate (d2end) at (3.5,0.5);
+
+			\draw[name path=d1] (d1start) node[above] {(d₁)} -- (d1end);
+			\draw[name path=d2] (d2start) node [above] {(d₂)} -- (d2end);
+			\draw[name path=s] (-1,-1.75) -- (2,3.5) node[left] {$(s)$};
+
+			\path[name intersections={of= d1 and s,by=A}];
+			\path[name intersections={of= d2 and s,by=B}];
+
+			\node[above left] at (A) {A};
+			\node[below right] at (B) {B};
+
+			\draw pic[draw,fill=red!50,angle radius=0.5cm,"135°" shift={(0.2cm,-0.5cm)}] {angle=B--A--d1end};
+			\draw pic[draw,fill=red!50,angle radius=0.5cm,"135°" shift={(-0.2cm,0.5cm)}] {angle=A--B--d2start};
+		\end{tikzpicture}
+	\end{minipage} \hspace{1em}
+	\begin{minipage}{0.45\textwidth}
+		Sur la figure ci-contre, les angles $\widehat{d₁As}$ et $\widehat{d₂Bs}$ on la même mesure, et sont alternes-internes. Donc, les droites (d₁) et (d₂) sont parallèles.
+	\end{minipage}
+\end{exemple}
+
+\section{Angles dans un triangle}
+
+\begin{cours}
+	La somme des mesures des angles d'un triangle est égale à 180°.
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}{0.6\textwidth}
+		\begin{tikzpicture}
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (3,3);
+
+			\node[above left] at (A) {A};
+			\node[above] at (C) {C};
+			\node[above right] at (B) {B};
+			\draw[<->] ([yshift=-0.5cm] A) -- node[below] {6 cm} ([yshift=-0.5cm] B);
+			\draw[<->] ([xshift=-0.5cm] A) -- node[left] {3 cm} ++(0,3);
+
+			\draw pic[draw,fill=red!30,angle radius=0.5cm] {angle=C--B--A};
+			\draw pic[draw,fill=blue!30,angle radius=0.5cm] {angle=B--A--C};
+			\draw pic[draw,fill=green!30,angle radius=0.5cm] {angle=A--C--B};
+
+			\draw (A) -- (B);
+			\draw (B) -- (C);
+			\draw (C) -- (A);
+		\end{tikzpicture}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}
+		\vspace{-2cm}
+		Dans la figure ci-contre, on a
+		\begin{itemize}
+			\item {\color{red} $\widehat{ABC} = 45°$}
+			\item {\color{Green} $\widehat{BCA} = 90°$}
+			\item {\color{blue} $\widehat{CAB} = 45°$}
+		\end{itemize}
+		Et on retrouve bien
+		$$ 45° + 90° + 45° = 180° $$
+	\end{minipage}
+\end{exemple}
+
+\end{document}

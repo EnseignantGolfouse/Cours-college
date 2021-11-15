@@ -1,0 +1,48 @@
+\documentclass[9pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{préambule}
+\usepackage{préambule-figures}
+\usetikzlibrary{calc,positioning}
+
+\begin{document}
+
+\begin{frame}
+	\begin{cours}[Vocabulaire du cône]
+		\begin{center}
+			\begin{tikzpicture}
+				\coordinate (Sommet) at (0,3);
+				\coordinate (H) at (0,0);
+				\coordinate (M) at (-0.6,-0.45);
+	
+				\draw[draw=green!30,fill=green!30] (1.5,0) -- (-1.5,0) -- (Sommet) -- cycle;
+				\draw[draw=blue!30,fill=blue!30] (H) ellipse (1.5 and 0.5);
+				\draw[dashed] (H) [partial ellipse=0:180:1.5 and 0.5];
+				\draw (H) [partial ellipse=0:-180:1.5 and 0.5];
+				\draw (1.5,0) -- (Sommet) -- (-1.5,0);
+	
+				\node[above right] at (Sommet) {S};
+				\draw[->] (Sommet) ++(-1.2,0) node[left] {\color{Purple}............} -- ++(1,0);
+	
+				\node at (H) {\small ×};
+				\node[below right] at (H) {H};
+				\draw[dashed,red] (Sommet) -- (H);
+				\draw[red] (H) ++(0.2,0) -- ++(0,0.2) -- ++(-0.2,0);
+				\draw[->] (H) ++(1.5,1.5) node[right] {\color{red}............} -- ++(-1.35,0);
+	
+				\draw (H) ++(1.9,0.8) node[right] {\color{Green}............} -- ++(-1.2,0) ++(0,-0.025) node {$\bullet$};
+	
+				\draw (H) ++(2,-0.8) node[right] {\color{blue}............} -- ++(-0.7,0) -- ++(-0.7,0.7) ++(0,-0.025) node {$\bullet$};
+	
+				\node at (M) {\small ×};
+				\node[below left] at (M) {M};
+				\draw[very thick,orange] (Sommet) -- (M);
+				\draw[->] (H) ++(-1.7,1) node[left] {\color{orange}............} -- ++(1.2,0);
+			\end{tikzpicture}
+		\end{center}
+		\vspace{1em}
+	
+		La figure ci-dessus est un \textbf{............}.
+	\end{cours}
+\end{frame}
+
+\end{document}

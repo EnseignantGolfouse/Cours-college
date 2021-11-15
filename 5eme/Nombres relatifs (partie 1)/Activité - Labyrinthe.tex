@@ -1,0 +1,57 @@
+\documentclass[a4paper,11pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+{\scriptsize colle dans ton cahier d'exercices}
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+		\vspace{0.5em}
+	\end{center}
+}
+\makeatother
+
+\title{Activité : Labyrinthe}
+\date{}
+\author{}
+
+\begin{document}
+
+\Copy{Activité}{
+	\maketitle
+
+	Voici un jeu qui se joue à 2 : une personne (\textbf{l'indic'}) donne des instructions, pendant que l'autre (\textbf{le prisonnier}) doit sortir d'un labyrinthe.
+
+	Chacun des 2 joueurs à une fiche qui indique ce qu'ils doivent faire.
+
+	\warningbox{
+		Il ne faut pas regarder la fiche de l'autre !
+	}
+
+	\section*{Pour l'indic'}
+
+	Donne les points, un par un, au prisonnier. Pense bien à dire \textbf{abscisse} et \textbf{ordonnée}, afin de bien te faire comprendre de ton camarade !
+
+	\section*{Pour le prisonnier}
+
+	Tu dispose d'un repère, sur lequel est dessiné un labyrinthe.
+
+	Lorsque l'indic' te donne les coordonnées d'un point, place ce point sur le repère.
+
+	Puis, relie tous les points dans l'ordre dans lequel ils t'ont été donnés pour savoir quel chemin emprunter !
+
+	\vspace{3em}
+
+	\awesomebox[black]{2pt}{\faRocket}{black}{
+		Lorque vous finissez un labyrinthe, vous pouvez demander le suivant au professeur.
+	}
+}
+
+\newpage
+
+\Paste{Activité}
+
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\geometry{left=1cm}
+\setlength{\columnsep}{0.8cm}
+
+\TitreDActivite{Créer des diagrammes}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{document}
+
+\Copy{Circulaire}{
+	\maketitle
+
+	On a interrogé 100 personnes pour savoir quel sport ils faisaient, et voici leurs réponses :
+
+	\begin{center}
+		\begin{tabular}{|l|c|c|c|c|c|}
+			\hline
+			Sport    & Natation & Football & Course & Escalade & Tennis
+			\\ \hline
+			Effectif & 35       & 20       & 15     & 25       & 5
+			\\ \hline
+		\end{tabular}
+	\end{center}
+
+	Indique la part de chaque sport sur le diagramme circulaire suivant :
+	\vspace{2em}
+
+	\begin{center}
+		\begin{tikzpicture}
+			\draw (0,0) circle (4);
+			\draw (0,0) -- (0,4) arc (90:108:4) -- (0,0);
+			\draw (-0.5,3.5) -- ++(-1,1) -- ++(-2,0) node[left] {Tennis};
+		\end{tikzpicture}
+	\end{center}
+
+	\vspace{1em}
+
+	\uline{Indice} : le cercle totalise 360°. Quel angle doit alors faire chaque part ? Tu peux utiliser un tableau de proportionnalité.
+}
+
+\newpage
+\Paste{Circulaire}
+
+\end{document}

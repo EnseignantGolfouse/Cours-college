@@ -1,0 +1,60 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\begin{document}
+
+\Copy{Cours}{
+\begin{cours}[Patron du cône]
+	Le patron d'un cône est :
+
+	\begin{center}
+		\newcommand{\racinededeux}{1.4142135623730951}
+
+		\begin{tikzpicture}
+			\draw[fill=green!30]
+			(0,0) coordinate (S)
+			-- (3,0) coordinate (A)
+			arc (0:120:3) coordinate (B)
+			-- cycle;
+			\draw[fill=blue!30] (4 / \racinededeux,4 / \racinededeux) coordinate (H) circle (1);
+			\draw[very thick,draw=Purple] (0.7,0) arc(0:120:0.7);
+			\node at (0.3,0.9) {\color{Purple}$α$};
+			\draw[<->] (0,-0.2) -- node[midway,below] {$g$} ++(3,0);
+			\draw[<->] (4 / \racinededeux,4 / \racinededeux + 1.2) -- node[midway,above] {$r$} ++(1,0);
+			\draw[very thin,dashed] (4 / \racinededeux,4 / \racinededeux + 1.2) -- ++(0,-1.2) ++(1,0) -- ++(0,1.2);
+
+			\foreach \p/\pos in {S/below left,A/below right,B/left,H/below} {
+				\node at (\p) {×};
+				\node[\pos] at (\p) {\p};
+			}
+		\end{tikzpicture}
+	\end{center}
+
+	Pour dessiner le patron d'un cône dont :
+	\begin{itemize}
+		\item La longueur de la génératrice est $g$
+		\item le rayon de la base est $r$
+	\end{itemize}
+	on doit :
+	\begin{itemize}
+		\item Dessiner une ligne de longueur $g$.
+		\item Utiliser un tableau de proportionnalité pour connaitre l'angle $α$ :
+		
+		\begin{tikzpicture}
+			\node (TAB) at (0,0) {\begin{tabular}{|l|c|c|}
+				\hline
+				Mesure de l'angle en ° : & 360 & $α$ \\ \hline
+				Longeur de l'arc : & $2 × π × g$ & $2 × π × r$ \\ \hline
+			\end{tabular}};
+			\draw[thick,Purple,->] (4.8,-0.3) arc(-90:90:0.3) node[midway,right] {{\large$×$} $\dfrac{360}{2 × π × g}$};
+		\end{tikzpicture}
+		\item Dessiner un cercle de rayon $r$ et de centre H, sachant que la distance [SH] est égale à $g + r$.
+	\end{itemize}
+\end{cours}
+}
+
+\Paste{Cours}
+
+\end{document}

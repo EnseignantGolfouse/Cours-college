@@ -1,0 +1,73 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+
+\newmdenv[style=greenstyle]{notation}
+
+\begin{document}
+
+\begin{center}
+	\LARGE
+
+	\uline{Multiples de 3}
+\end{center}
+
+Tu sais peut-être déjà que, pour qu'un nombre soit multiple de 3, il faut (et suffit) que la \textbf{somme des chiffres} de ce nombre soit aussi multiple de 3. Nous allons ici en faire la preuve !
+
+\begin{greybox}[frametitle={Remarque :}]
+	On ne peut pas utiliser le critère de divisibilité par 3 tout au long de cette fiche, car \textbf{c'est ce qu'on essaie de montrer !}
+\end{greybox}
+
+\section{Puissance de 10}
+
+\begin{itemize}
+	\item Calcule $10 - 1 = ....$
+
+	      Est-ce un multiple de 3 ?
+	\item Fait de même pour $100 - 1 = ......$ et $1000 - 1 = ........$ .
+
+	      \uline{Peux-tu faire une hypothèse ?}
+	\item Essaie de prouver cette hypothèse (sans utiliser le critère de divisibilité par 3 !).
+
+	      \renewcommand{\arraystretch}{1.2}
+	      \begin{tabular}{|l|}
+		      \hline Indice                                                              \\ \hline
+		      On sait que $10\ 000 = 10 × 1000$.                                         \\
+
+		      Donc, $10\ 000 - 1 = (1000 - 1) × .... + ....$.                            \\
+
+		      Enfin, tu sais que $(1000 - 1)$ est multiple de 3 : donc, que peux-tu dire \\ de $10\ 000 - 1$ ? Fait de même pour $100\ 000 - 1$.
+		      \\ \hline
+	      \end{tabular}
+\end{itemize}
+
+\begin{notation}[frametitle={Notation}]
+	On note $10ᵏ$ pour dire \textbf{un 10 suivi de k zéros}.
+\end{notation}
+
+On sait maintenant que quel que soit $k$, $10ᵏ - 1$ est un multiple de 3.
+
+\section{Nombres généraux}
+
+Prenons le nombre $2\ 000\ 000$.
+
+\begin{itemize}
+	\item D'après la section précédente, on peut dire que $1\ 000\ 000 - 1 = 3 × n$ (où $n$ est un nombre que nous ne connaissons pas. En tout cas pas moi :)). Donc
+	      $$1\ 000\ 000 = .... × n + ....$$
+	\item Sachant cela, écrit
+	      $$ 2\ 000\ 000 = 3 × .... + .... $$
+	\item De même, écrit
+	      $$ 3\ 000\ 000 = 3 × .... + .... $$
+	      Que remarques-tu ?
+\end{itemize}
+
+Prenons maintenant le nombre $5\ 000 \ 010$.
+\begin{itemize}
+	\item On écrit $1\ 000\ 000 - 1 = 3 × n$ et $10 - 1 = 3 × m$. Donc
+	      $$ 1\ 000\ 000 = .... × n + .... \text{ \hspace{2em}et\hspace{2em} } 10 = .... × m + .... $$
+	\item Ainsi, on peut écrire
+	      $$ 5\ 000 \ 010 = 3 × .... + .... $$
+\end{itemize}
+Conclus.
+
+\end{document}

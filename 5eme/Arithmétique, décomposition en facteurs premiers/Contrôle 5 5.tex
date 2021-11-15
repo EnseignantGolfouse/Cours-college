@@ -1,0 +1,129 @@
+\documentclass[a4paper]{article}
+
+\usepackage{préambule}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+    \topskip0pt
+	\@author \hfill \@date \\
+
+	\begin{center}
+		\begin{huge}
+			\@title \\[2em]
+		\end{huge}
+	\end{center}
+}
+\makeatother
+
+% marges
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+
+\title{Contrôle n°1 : multiples, diviseurs, nombres premiers}
+\date{22 septembre 2021}
+\author{Nom : ..........}
+
+\begin{document}
+
+\maketitle
+
+\begin{question}[(4 points)] Question de cours \\
+	\begin{itemize}
+		\setlength\itemsep{0.4em}
+		\item[$\bullet$] L’écriture 42 = 7 × 6 permet de dire que 6 est un \dotfill de 42.
+		\item[$\bullet$] Écris la liste des 4 premiers multiples de 14 : \dotfill
+		\item[$\bullet$] Le nombre 39 est-il premier ? pourquoi ? \dotfill \\[0.5em] .\dotfill
+		\item[$\bullet$] Un nombre est divisible par 3 si : \dotfill \\[0.5em] .\dotfill
+	\end{itemize}
+\end{question}
+
+\begin{question}[(3,5 points)] QCM : entourer \uline{la} ou \uline{les} bonnes réponses.
+
+	\renewcommand{\arraystretch}{1.8}
+	\begin{tabular}[t]{|m{3.8cm}|c|c|c|}
+		\firsthline
+		$124$ est un multiple de :   & $4$                  & $3$                  & $2$                      \\ \hline
+		$26$                         & a pour diviseur $13$ & a pour multiple $13$ & est un multiple de $13$  \\ \hline
+		Parmi les égalités
+		suivantes, donner la
+		division euclidienne de
+		$375$ par $14$               & $375=25×14 +25$      & $375=26×14+11$       & $375=27×14-3$            \\ \hline
+		$21336$ est un multiple de : & $3$                  & $9$                  & $4$                      \\ \hline
+		$17$ est :                   & Un diviseur de $34$  & Un multiple de $17$  & Le seul diviseur de $17$ \\ \hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{question}
+
+\begin{question}[(3 points)] Division euclidienne.
+	\begin{enumerate}
+		\item \renewcommand{\arraystretch}{1.3}
+		      $
+			      \begin{array}{r|r}
+				      ??     & 14 \\
+				      \cline{2-2}
+				      \vdots & 18 \\
+				      5      &
+			      \end{array}
+		      $ \renewcommand{\arraystretch}{1}
+
+		      $??$ est égal à ....
+		\item On donne l’égalité : $325 = 78 × 4 + 13$.
+
+		      \begin{itemize}
+			      \setlength\itemsep{0.4em}
+			      \item[$\bullet$] Sans faire de division, détermine le quotient et le reste de la division euclidienne de $325$ par $78$. \\[0.3cm]
+			            .\dotfill
+			      \item[$\bullet$] $78$ est-il le quotient de la division euclidienne de $325$ par $4$ ? Justifie. \\[0.3cm]
+			            .\dotfill \\[0.3cm]
+			            .\dotfill
+		      \end{itemize}
+	\end{enumerate}
+\end{question}
+
+\begin{question}[(2.5 points)]
+
+	Un cuisinier a un lot de 85 crevettes.
+	\begin{enumerate}
+		\item Il voudrait les répartir dans 14 assiettes de manière que chaque assiette contienne le même nombre de crevettes et il voudrait utiliser toutes les crevettes. Est-ce possible ? Pourquoi ? \\[0.3cm]
+		      .\dotfill
+		\item S’il n’utilise pas toutes les crevettes, combien peut-il en mettre au maximum dans chaque assiette ? \\[0.3cm]
+		      .\dotfill
+	\end{enumerate}
+\end{question}
+
+\begin{question}[(2 points)]
+	Dans une partie de cartes on doit répartir entre les joueurs $18$ jetons noirs et $12$ jetons blancs. Chaque joueur doit recevoir le même nombre de jetons noirs et le même nombre de jetons blancs.
+	\begin{enumerate}
+		\item Peut-il y avoir $2$ joueurs ?
+		\item Peut-il y avoir $9$ joueurs ?
+	\end{enumerate}
+\end{question}
+
+\begin{question}[(2,5 points)]
+	Léa a oublié le code à 4 chiffres de son entrée. Elle sait que :
+	\begin{itemize}
+		\setlength\itemsep{0.3em}
+		\item[] Le chiffre des unités divise tous les nombres entiers.
+		\item[] Le chiffre des dizaines multiplié par celui des milliers donne le chiffre des centaines.
+		\item[] Le chiffre des milliers est impair.
+		\item[] La somme des chiffres est 12 et les quatre chiffres sont différents.
+	\end{itemize}
+
+	Quel est le code ? \\ \\
+	.\dotfill
+\end{question}
+
+\begin{question}[(2,5 points)]
+	Jean a un nombre de billes compris entre 25 et $75$. S’il les range par $3$, $4$ ou $5$ il en reste toujours $2$. Combien a-t-il de billes ? Laisser toutes les démarches faites sur ta copie. \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill \\[0.5cm]
+	.\dotfill
+\end{question}
+
+\end{document}

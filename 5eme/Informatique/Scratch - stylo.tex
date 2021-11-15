@@ -1,0 +1,124 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+\usepackage{préambule-scratch}
+
+\newgeometry{top=1cm,bottom=1cm,left=1cm,right=1cm}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+{\scriptsize colle dans ton cahier d'exercices}
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+		\vspace{1em}
+	\end{center}
+}
+\makeatother
+
+\title{Dessiner avec scratch}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+On va faire des dessins en utilisant Scratch.
+
+\section{Mise en place}
+
+\begin{enumerate}[1)]
+	\item Démarre Scratch, et commence un nouveau projet.
+	\item Les blocks pour manipuler le stylo se trouve dans la catégorie « stylo », en {\color{Green}vert}.
+	\item Ensuite, suis les instructions suivantes :
+	      \begin{itemize}
+		      \item Clique sur {\color{violet}Ajouter blocks}, puis sur « Créer un block ».
+		      \item Nomme ce block « Réinitialiser », et appuie sur « OK ».
+		      \item Accroche les instructions suivantes au nouveau block :
+		      \begin{center}
+				\begin{tikzpicture}[scale=0.9]
+					\startInstruction[Purple]{Réinitialiser}
+					\instruction[Orchid]{cacher}
+					\instruction[cyan]{donner la valeur \circled{0} à x}
+					\instruction[cyan]{donner la valeur \circled{0} à y}
+					\instruction[cyan]{s'orienter à \circled{90}}
+					\instruction[Green]{stylo en position d'écriture}
+					\instruction[Green]{effacer tout}
+				\end{tikzpicture}
+			  \end{center}
+	      \end{itemize}
+	      Tu peux maintenant utiliser le block \tikz[scale=0.6]{\instruction[Purple]{Réinitialiser}[5]} pour effacer le dessin et mettre le stylo au centre de l'écran.
+\end{enumerate}
+
+\section{Premiers dessins}
+
+\begin{enumerate}
+	\item Utilise à la suite le block \squared[Purple]{Réinitialiser} et \squared[cyan]{avance \circled{50}}.
+
+	      La ligne obtenue est-elle \vspace{0.5em}
+
+	      \hspace{5em} verticale \hfill horizontale \hspace{10em}
+
+	      ?
+	\item  Au début du programme, les coordonnées du stylo sont (0 ; 0). Après ce programme, quelles sont les coordonnées du stylo ? ................
+	\item Utilise les block \squared[cyan]{avance \circled{\phantom{A}}} et \squared[cyan]{tourner de \circled{\phantom{A}}} pour dessiner un carré.
+\end{enumerate}
+
+\section{Dessins complexes}
+
+Utilise le stylo pour faire les dessins suivants :
+
+\hfill → {\footnotesize Tourne la page}
+
+\begin{enumerate}[1)]
+	\item \begin{center}
+		      \begin{tikzpicture}[scale=0.018]
+			      \draw[gray,ultra thin,step=50] (-200,-200) grid (200,200);
+			      \draw[thick,->] (-220,0) -- (220,0);
+			      \draw[thick,->] (0,-220) -- (0,220);
+
+			      \draw[thick] (50,0) -- (50,-10) node[below] {\footnotesize 50};
+			      \draw[thick] (0,50) -- (-10,50) node[left] {\footnotesize 50};
+			      \node[below left] at (0,0) {0};
+
+			      \draw[ultra thick] (0,0) -- ++(150,150) -- ++(-300,0) -- ++(300,-300) -- ++(-300,0) -- cycle;
+		      \end{tikzpicture}
+	      \end{center}
+	\item \begin{center}
+		      \begin{tikzpicture}[scale=0.018]
+			      \draw[gray,ultra thin,step=50] (-200,-200) grid (200,200);
+			      \draw[thick,->] (-220,0) -- (220,0);
+			      \draw[thick,->] (0,-220) -- (0,220);
+
+			      \draw[thick] (50,0) -- (50,-10) node[below] {\footnotesize 50};
+			      \draw[thick] (0,50) -- (-10,50) node[left] {\footnotesize 50};
+			      \node[below left] at (0,0) {0};
+
+			      \draw[ultra thick] (-100,-150) -- ++(200,0) -- ++(0,200) -- ++(-100,100) -- ++(-100,-100) -- ++(200,0) ++(-200,0) -- ++(0,-200);
+		      \end{tikzpicture}
+	      \end{center}
+	\item \begin{center}
+		      \begin{tikzpicture}[scale=0.018]
+			      \draw[gray,ultra thin,step=50] (-200,-200) grid (200,200);
+			      \draw[thick,->] (-220,0) -- (220,0);
+			      \draw[thick,->] (0,-220) -- (0,220);
+
+			      \draw[thick] (50,0) -- (50,-10) node[below] {\footnotesize 50};
+			      \draw[thick] (0,50) -- (-10,50) node[left] {\footnotesize 50};
+			      \node[below left] at (0,0) {0};
+
+			      \draw[ultra thick] (-100,-150) -- ++(200,0) -- ++(0,200) -- ++(-200,-200) -- ++(0,200) -- ++(200,0) -- ++(-100,100) -- ++(-100,-100) -- ++(200,-200);
+		      \end{tikzpicture}
+	      \end{center}
+
+	\item Pour visualiser les mouvements du stylo, on peut utiliser le block
+
+	      \squared[cyan]{glisser en \circled{\phantom{A}} secondes à x: \circled{\phantom{A}} y: \circled{\phantom{A}}}
+
+	      Peux-tu reproduire le dessin de la question 3) sans que le stylo repasse sur la même ligne deux fois ?
+
+	      Peux-tu le faire sans utiliser \squared[Green]{relever le stylo} ?
+\end{enumerate}
+
+\end{document}

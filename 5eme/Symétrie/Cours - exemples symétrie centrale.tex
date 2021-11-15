@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\title{Chapitre 3 : Symétrie}
+\date{}
+\author{}
+
+\begin{luacode}
+require "5eme.symetrie"
+function draw_dashed(p1, p2)
+	tex.print("\\draw[dashed] (", p1.x, ",", p1.y, ") -- (", p2.x, ",", p2.y,");")
+end
+\end{luacode}
+
+\begin{document}
+
+\Copy{Exemples}{
+	\begin{exemple}
+		\begin{tikzpicture}
+			\directlua{
+			local centre = { x = 5, y = 3 }
+			local points = {
+			{x = 2, y = 5},
+			{x = 2, y = 4},
+			{x = 1, y = 4},
+			{x = 1.5, y = 3.5},
+			{x = 2.5, y = 3.5},
+			{x = 3, y = 4},
+			{x = 2, y = 4},
+			{x = 2, y = 4.2},
+			{x = 1.2, y = 4.2},
+			{x = 2, y = 5},
+			}
+
+			local points_symetrique = symetrie_centrale(centre, points)
+
+			tikz_draw_points(points)
+			tikz_draw_points(points_symetrique)
+			draw_dashed(points[5], points_symetrique[5])
+			draw_dashed(points[6], points_symetrique[6])
+			draw_center(centre, "south west")
+			}
+
+			\draw[black,thick] (3.8,3.75) -- ++(0.1,-0.3);
+			\draw[black,thick] (6,2.6) -- ++(0.1,-0.3);
+
+			\draw[black,thick] (3.6,3.45) -- ++(0.1,-0.3);
+			\draw[black,thick] (3.7,3.44) -- ++(0.1,-0.3);
+			\draw[black,thick] (6.2,2.9) -- ++(0.1,-0.3);
+			\draw[black,thick] (6.3,2.89) -- ++(0.1,-0.3);
+		\end{tikzpicture}
+	\end{exemple}
+}
+
+\Paste{Exemples}
+
+\Paste{Exemples}
+
+\Paste{Exemples}
+
+\end{document}

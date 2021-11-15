@@ -1,0 +1,146 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+
+\newcommand{\red}{\color{red}}
+
+\title{Contrôle n°2 : Priorités opératoires}
+\date{15 octobre 2021}
+\author{Prénom : {\red CORRECTION}}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+    \topskip1em
+	\@author \hfill \@date \\
+
+	\begin{center}
+		\begin{huge}
+			\@title \\[1em]
+		\end{huge}
+	\end{center}
+}
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+\begin{question}[(4 points)] Effectue les calculs suivants en respectant les priorités opératoires :
+
+	\noindent
+	\begin{tabular}{p{0.47\textwidth}|p{0.47\textwidth}}
+		A = \uline[\red]{14 + 39} − 42 + 7 & B = 16 − \uline[\red]{4 × 3} + 2 \\
+		{\red A = \uline{53 − 42} + 7 }    & {\red B = \uline{16 − 12} + 2}   \\
+		{\red A = \uline{11 + 7} }         & {\red B = \uline{4 + 2}}         \\
+		{\red A = 18 }                       & {\red B = 6 } \vspace{1em}         \\
+		C = \uline[\red]{15 ÷ 5} × 8 ÷ 3   & D = 40 − \uline[\red]{3 × 2} × 6 \\
+		{\red C = \uline{3 × 8} ÷ 3}       & {\red D = 40 − \uline{6 × 6}}    \\
+		{\red C = \uline{24 ÷ 3}}          & {\red D = \uline{40 − 36}}       \\
+		{\red C = 8}                         & {\red D = 4} \vspace{1em}          \\
+	\end{tabular}
+\end{question}
+
+\begin{question}[(4 points)] Effectue les calculs suivants en respectant les priorités opératoires :
+
+	\noindent
+	\begin{tabular}{p{0.47\textwidth}|p{0.47\textwidth}}
+		E = 30 − (\uline[\red]{12 + 6})    & F = (\uline[\red]{3 + 2}) × (5 + 4)      \\
+		{\red E = \uline{30 − 18}}         & {\red F = 5 × (\uline{5 + 4})}           \\
+		{\red E = 12}                        & {\red F = \uline{5 × 9}}                 \\
+		                                     & {\red F = 45} \vspace{3em}                 \\
+		G = 3 + (\uline[\red]{14 − 5}) × 3 & H = 37 − [3 × (\uline[\red]{5 + 2}) − 4] \\
+		{\red G = 3 + \uline{9 × 3}}       & {\red H = 37 − [\uline{3 × 7} − 4]}      \\
+		{\red G = \uline{3 + 27}}          & {\red H = 37 − [\uline{21 − 4}]}         \\
+		{\red G = 30}                        & {\red H = \uline{37 − 17}}               \\
+		{}                                   & {\red H = 20} \vspace{1em}                 \\
+	\end{tabular}
+\end{question}
+
+\begin{question}[(3 points)] Complète en utilisant $+,-,×,÷$ pour que les égalités soient vraies :
+
+	\vspace{1em}
+	\noindent
+	\begin{tabular}{p{0.47\textwidth}p{0.47\textwidth}}
+		% 14 - 5 + 6
+		14 {\red −} 5 {\red +} 6 = 15 &
+		% 5 + 5 - 5 ÷ 5
+		5 {\red +} 5 {\red −} 5 {\red ÷} 5 = 9 \vspace{0.5em} \\
+		% 4 + 7 × 10
+		4 {\red +} 7 {\red ×} 10 = 74 &
+	\end{tabular}
+	\vspace{1em}
+
+	Complète en utilisant $+,-,×,÷$ \textbf{et les parenthèses} pour que les égalités soient vraies :
+
+	\vspace{1em}
+	\noindent
+	\begin{tabular}{p{0.47\textwidth}p{0.47\textwidth}}
+		% (3 + 2) × 5
+		{\red (} 3 {\red +} 2 {\red ) ×} 5 = 25                       &
+		% 4 × (6 - 3)
+		4 {\red × (} 6 {\red −} 3 {\red )} = 12 \vspace{0.5em}          \\
+		% (8 - 5) × (2 + 2)
+		{\red (} 8 {\red −} 5 {\red ) × (} 2 {\red +} 2 {\red )} = 12 &
+	\end{tabular}
+	\vspace{1em}
+\end{question}
+
+\begin{question}[(3 points)]
+	Farid dispose de 6 billets de 50 euros. Il achète un lecteur MP3 à 80 euros et cinq DVD à 9 euros l'unité.
+	\begin{itemize}
+		% 6 × 50 - (80 + 5 × 9)
+		\item \textbf{En utilisant les nombres de l'énoncé}, écrit une expression représentant la somme restante après ses achats.
+
+			      {\red 6 × 50 − (80 + 5 × 9)}
+		      % 6 × 50 - (80 + 5 × 9)
+		      % = 300 - (80 + 5 × 9)
+		      % = 300 - (80 + 45)
+		      % = 300 - 125
+		      % = 175 €
+		\item Effectue les calculs correspondants.
+			      {\red \begin{align*}
+					        & \ 6 × 50 - (80 + 5 × 9) \\
+					      = & \ 6 × 50 - (80 + 45)    \\
+					      = & \ 6 × 50 - 125          \\
+					      = & \ 300 - 125             \\
+					      = & \ 175
+				      \end{align*} }
+	\end{itemize}
+\end{question}
+
+\begin{question}[(4 points)]\
+
+	La halle Tony-Garnier, à Lyon, peut recevoir 3000 personnes au total. 2000 places sont situées devant la scène et les autres un peu plus loin sur des gradins.
+
+	Lors du premier concert, la salle est pleine. Les places devant la scène sont vendues à 24€ et les places en gradins à 10€.
+	\begin{enumerate}
+		\item Combien y-a-t'il de places en gradins ? {\red Il y a $3000 - 2000 = 1000$ places en gradins.}
+		\item \textbf{En utilisant les nombres de l'énoncé}, écrit une expression permettant de calculer la recette du concert.
+
+			      {\red $2000 × 24 + (3000 - 2000) × 10$}
+		\item Calcule cette recette.
+			      {\red \begin{align*}
+					        & \ 2000 × 24 + (3000 - 2000) × 10 \\
+					      = & \ 2000 × 24 + 1000 × 10          \\
+					      = & \ 48 000 + 1000 × 10             \\
+					      = & \ 48 000 + 10 000                \\
+					      = & \ 58 000
+				      \end{align*} }
+	\end{enumerate}
+\end{question}
+
+\begin{question}[(2 points)]
+	Ecrit chacune de ces phrases à l’aide d’un calcul, puis calcule le résultat :
+	\begin{enumerate}
+		\item Le produit de quatre par la somme de neuf et de cinq.
+			      {\red $$ 4 × (9 + 5) = 56 $$}
+		\item La somme du produit de six par huit et de vingt.
+			      {\red $$ 6 × 8 + 20 = 68 $$}
+		\item La différence entre le produit de cinq par deux et six.
+			      {\red $$ 5 × 2 - 6 = 4 $$}
+		\item Le quotient de la somme de sept et de huit par la différence de vingt et un et de six.
+			      {\red $$ (7 + 8) ÷ (21 - 6) = 1 $$}
+	\end{enumerate}
+\end{question}
+
+\end{document}

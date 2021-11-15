@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard} % copie-colle du code latex
+
+\title{Le défi de Zoé : bonus}
+\date{}
+\author{}
+
+\begin{document}
+
+\addtolength{\extrarowheight}{0.5em}
+
+\maketitle
+
+\begin{exercice}\
+	\begin{center}
+		\begin{tabularx}{10em}{
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X |}
+			\hline
+			30 & +  & 13 & - & 8  \\ \hline
+			-  & 21 & -  & 7 & ×  \\ \hline
+			5  & ×  & 4  & × & 3  \\ \hline
+			+  & 6  & ×  & 2 & +  \\ \hline
+			15 & ÷  & 3  & - & 11 \\ \hline
+		\end{tabularx}
+	\end{center}
+
+	Comme dans le jeu de base, on commence en haut à gauche, et on ne peut avancer que vers la droite et le bas.
+
+	\begin{itemize}
+		\item Quel est le chemin qui donne le plus grand nombre possible ? % 337 = 30 + 21 × 6 × 3 – 11
+		\item Comment obtenir 24 ? % 30 + 13 – 4 × 2 – 11
+		\item Comment obtenir 9 ? % 30 – 5 × 6 ÷ 3 – 11
+	\end{itemize}
+
+\end{exercice}
+
+\begin{exercice}
+	Compléter la grille suivante pour que les 2 résultats possibles soient $60$ et $28$ :
+	\begin{center}
+		\begin{tabularx}{4em}{
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X |}
+			\hline
+			30 & \\ \hline
+			   & \\ \hline
+		\end{tabularx}
+	\end{center}
+
+	Compléter la grille suivante pour que les résultats possibles soient 1, 10, 11, 16, 21, 25 :
+	\begin{center}
+		\begin{tabularx}{6em}{
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X
+				| >{\centering\arraybackslash}X |}
+			\hline
+			13 &   &   \\ \hline
+			   & 6 & ÷ \\ \hline
+			   &   & 2 \\ \hline
+		\end{tabularx}
+	\end{center}
+	% 13 + 16
+	% -  6 ÷
+	% 1  × 2
+\end{exercice}
+
+\end{document}

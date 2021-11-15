@@ -1,0 +1,153 @@
+% !TEX root = ./Cours.tex
+\documentclass[../€Cours-complet/Cours-complet]{subfiles}
+
+\titleorchapter{Calcul littéral}{9}
+
+\begin{document}
+
+\maketitleCours
+
+\section{Expression littérale}
+
+\begin{cours}[Expression littérale]
+	Une \textbf{expression littérale} est une expression dans laquelle un ou plusieurs nombres sont désignés par des lettres.
+\end{cours}
+
+\begin{exemple}
+	$$ A = 2 × x + 3 \hspace{8em} B = x + 2 × y $$
+
+	sont des expressions littérales.
+\end{exemple}
+
+\begin{cours}[Simplification d'écriture]
+	Pour alléger l'écriture d'une expression littérale, le signe × peut être supprimé dans certains cas :
+	\begin{itemize}
+		\item Entre un nombre et une lettre :
+
+		      $3 × a = 3a$
+
+		      $20 − 5 × x = 20 − 5 x$
+		\item Entre 2 lettres :
+		\item
+		      $x × y = xy$
+
+		      $2 × a × b = 2 ab$
+		\item Entre un nombre et une parenthèse :
+
+		      $2 × (x + 3) = 2(x + 3)$
+
+		      $5 × (3 × x - 1) = 5(3x − 1)$
+		\item Entre une lettre et une parenthèse :
+
+		      $x × (7+ y) = x (7+ y)$
+
+		      $6 × x × (2 + y)= 6x(2 + y)$
+		\item Entre 2 parenthèses :
+
+		      $(5 + x) × (3−2 y) = (5 + x) (3−2 y)$
+		\item $1x$ s'écrit simplement $x$
+	\end{itemize}
+\end{cours}
+
+\begin{cours}[Développer, factoriser]
+	\begin{itemize}
+		\item \textbf{Développer} une expression littérale, c’est l’écrire comme une somme de termes.
+		\item \textbf{Factoriser} une expression littérale, c’est l’écrire comme un produit de facteurs.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	\begin{itemize}
+		\item $A = 7x + 3(x+2)$ est une forme quelconque.
+		\item $B = 3z + 5 - 2z + 9$ est une forme développée.
+		\item $C = 5(g - 7)$ est une forme factorisée.
+		\item $D = (a - 3) (a + 4)$ est une forme factorisée.
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}[Utilisation d'une expression littérale]
+	Pour utiliser une expression littérale avec certaines valeurs, on \textit{remplace} dans l'expression toutes les \textit{lettres} par leurs \textit{valeurs}.
+\end{cours}
+
+\begin{exemple}
+	L'aire $𝒜$ d'un rectangle peut s'écrire comme le produit de sa longueur $L$ et de sa largeur $𝑙$ :
+	$$ 𝒜 = L × 𝑙 $$
+
+	Si on veut calculer l'aire d'un rectangle de longueur $6$ et de largeur $4$, on doit donc remplacer $L$ par $6$ et $𝑙$ par $4$ :
+	\begin{align*}
+		𝒜 & = L × 𝑙 \\
+		𝒜 & = 6 × 4 \\
+		𝒜 & = 24    \\
+	\end{align*}
+\end{exemple}
+
+\section{Tester une égalité}
+
+\begin{cours}[Égalité]
+	\begin{itemize}
+		\item Une \textbf{égalité} est constituée de deux \textbf{membres} séparés par un signe =.
+		\item Une égalité est \textbf{vraie} si les deux membres ont la même valeur.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	$$ \underbrace{3 × 6} \hspace{4.5em} = \hspace{4.5em} \underbrace{13 + 5} $$
+	\begin{center}
+		membre de gauche \hspace{3em} membre de droite
+	\end{center}
+
+	Cette égalité est \textit{vraie} car les deux membres valent $18$. \vspace{1em}
+
+	$$ \underbrace{1 + 2 + 18} \hspace{2.5em} = \hspace{5.5em} \underbrace{5 × 4} $$
+	\begin{center}
+		membre de gauche \hspace{3em} membre de droite
+	\end{center}
+
+	Cette égalité est \textit{fausse} car le membre de gauche vaut $21$, tandis que le membre de droite vaut $20$.
+\end{exemple}
+
+\begin{cours}[Égalité avec des lettres]
+	Si une égalité contient des lettres, elle peut être \textit{vraie} pour certaines valeurs, et \textit{fausse} pour d'autres.
+\end{cours}
+
+\begin{exemple}
+	Considérons l'égalité $x + 6 = 19$.
+	\begin{itemize}
+		\item Si $x = 8$, cette égalité est fausse : on a $14$ à gauche et $19$ à droite.
+		\item Si $x = 13$, cette égalité est vraie : on a $19$ des deux côtés.
+	\end{itemize}
+\end{exemple}
+
+\section*{Résumé / carte mentale}
+
+\myimportantbox[frametitle={Expression littérale}]{cyan}{
+	Les lettres désignent des nombres.
+
+	\textit{Exemple} : $x + 2$
+}
+
+\myimportantbox[frametitle={Calcul de la valeur d'une expression littérale}]{orange}{
+	On remplace les lettres par leurs valeurs.
+
+	\textit{Exemple} : Avec $x = 1$,
+
+	\begin{align*}
+		x + 2 & = 1 + 2 \\
+		      & = 3
+	\end{align*}
+}
+
+\myimportantbox[frametitle={Égalité}]{green}{
+	$$ \underset{\text{membre de gauche}}{G} = \underset{\text{membre de droite}}{D} $$
+}
+
+\myimportantbox[frametitle={Tester une égalité}]{lime}{
+	Calcul de $G$ puis calcul de $D$.
+
+	\begin{itemize}
+		\item Si Résultat $G$ = Résultat $D$ alors l'égalité est \textbf{vraie}.
+		\item Si Résultat $G$ ≠ Résultat $D$ alors l'égalité est \textbf{fausse}.
+	\end{itemize}
+}
+
+\end{document}

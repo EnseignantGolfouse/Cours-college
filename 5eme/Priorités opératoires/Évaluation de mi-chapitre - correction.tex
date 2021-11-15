@@ -1,0 +1,113 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard} % copie-colle du code latex
+
+% Pour entourer un nombre en rouge
+\newcommand*\redcircled[1]{\tikz[baseline=(char.base)]{
+	\node[shape=circle,draw,inner sep=2pt,draw=red] (char) {#1};
+}}
+
+
+\begin{document}
+
+Prénom: {\color{red} CORRIGÉ} \hfill 5\textsuperscript{ème} 8
+\begin{center}
+	\begin{huge}
+		Évaluation
+	\end{huge}
+
+	5 octobre 2021
+\end{center}
+
+\begin{exercice}[(2 points)]
+	Compléter le vocabulaire suivant :
+	\begin{itemize}
+		\item Dans l'expression $12 + 65 = 77$, $12$ et $65$ sont les {\color{red} termes} .
+		\item Dans l'expression $17 × 5 = 85$, $85$ est le {\color{red} produit} de $17$ par $5$.
+	\end{itemize}
+
+	Entourer le mot qui correspond :
+
+	\begin{center}
+		Dans l'expression $6 = \frac{42}{7}$, $6$ est le quotient de $42$ {\color{red} par} $7$.
+
+		\begin{multicols}{4}
+			\begin{itemize}
+				\item de
+				\item et de
+				\item \redcircled{par}
+				\item sur
+			\end{itemize}
+		\end{multicols}
+	\end{center}
+\end{exercice}
+
+\begin{exercice}[(6 points)]
+	Faire les calculs en \textbf{détaillant} les étapes :
+
+	\begin{align*}
+		A & = \uline[\color{red}]{7 − 6} + 12 & B & = \uline[\color{red}]{13 × 2} + 7 × 8 & C & = 55 - 6 - \uline[\color{red}]{3 × 5}
+	\end{align*}
+	\color{red}
+	\begin{align*}
+		A & = \uline{1 + 12} & B & = 26 + \uline{7 × 84} & C & = \uline{55 − 6} - 15 \\
+		A & = 13               & B & = \uline{26 + 56}     & C & = \uline{49 − 15}     \\
+		  &                    & B & =  82                   & C & = 34
+	\end{align*}
+\end{exercice}
+
+\hrule
+\vspace{0.05\textheight}
+
+% \newcommand\exerciceCounterBackup{\numexpr\value{exercice}-1}
+% \setcounter{exercice}{0}
+
+% \begin{minipage}[t][0.45\textheight][t]{\textwidth}
+% 	\Paste{recto}
+% \end{minipage}
+
+% \newpage
+
+\begin{exercice}[(2 points)]
+	On veut calculer $3 × 6 - 4 ÷ 2$.
+	\begin{itemize}
+		\item Diego affirme avoir trouvé $7$. A-t-il raison ?
+
+		      Quel calcul a-t-il effectué ?
+
+		      {\color{red}
+		      Non, Diego n'a pas raison, car il a fait les calculs de \textbf{gauche à droite}, sans respecter les priorités :
+		      \begin{align*}
+			        & \uline{3 × 6} − 4 ÷ 2 \\
+			      = & \uline{18 − 4} ÷ 2    \\
+			      = & \uline{14 ÷ 2}        \\
+			      = & 7
+		      \end{align*}
+		      }
+		\item Élise affirme avoir trouvé $16$. A-t-elle raison ?
+
+		      Quel calcul a-t-elle effectué ?
+
+		      {\color{red}
+		      Oui, Élise a raison, car elle a appliqué les priorités de calcul :
+		      \begin{align*}
+			        & \uline{3 × 6} − 4 ÷ 2 \\
+			      = & 18 − \uline{4 ÷ 2}    \\
+			      = & \uline{18 − 2}        \\
+			      = & 16
+		      \end{align*}
+		      }
+	\end{itemize}
+\end{exercice}
+
+% \hrule
+% \vspace{0.05\textheight}
+
+% \setcounter{exercice}{\exerciceCounterBackup}
+
+% \begin{minipage}[t][0.45\textheight][t]{\textwidth}
+% 	\Paste{verso}
+% \end{minipage}
+
+\end{document}

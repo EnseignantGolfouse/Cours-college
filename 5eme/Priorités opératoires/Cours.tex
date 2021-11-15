@@ -1,0 +1,178 @@
+% !TEX root = ./Cours.tex
+\documentclass[../€Cours-complet/Cours-complet]{subfiles}
+
+\titleorchapter{Priorités opératoires}{2}
+
+\begin{document}
+
+\maketitleCours
+
+\begin{cours}[Vocabulaire]
+	\begin{itemize}
+		\item Le résultat d'une addition est une \textbf{somme}. Les nombres additionés sont les \textbf{termes}.
+		\item Le résultat d'une soustraction est une \textbf{différence}. Les nombres qui interviennent dans la soustraction sont les \textbf{termes}.
+		\item Le résultat d'une multiplication est un \textbf{produit}. Les nombres multipliés sont les \textbf{facteurs}.
+		\item Le résultat d'une division est un \textbf{quotient}.
+		      \begin{itemize}
+			      \item Si l'opération est écrite avec le signe “$÷$”, on dit qu'on divise un \textbf{dividende} par un \textbf{diviseur}.
+			      \item Si l'opération est écrite comme une fraction, on dit qu'on divise un \textbf{numérateur} par un \textbf{dénominateur}.
+		      \end{itemize}
+	\end{itemize} \vspace{1em}
+
+	On fera attention au vocabulaire utilisé, notamment les prépositions (de, par, entre, ...). Regarde bien les exemples ci-dessous pour savoir quoi utiliser.
+\end{cours}
+
+\begin{exemple}
+	\begin{itemize}
+		\item Dans $6 + 3,2 = 9,2$ :
+		      \begin{itemize}
+			      \item $6$ et $3,2$ sont les \textbf{termes}.
+			      \item $9,2$ est la \textbf{somme} \uline{de} $6$ \uline{et} $3,2$.
+		      \end{itemize}
+		\item Dans $8,7 - 6,5 = 2,2$ :
+		      \begin{itemize}
+			      \item $8,7$ et $6,5$ sont les \textbf{termes}.
+			      \item $2,2$ est la \textbf{différence} \uline{entre} $8,7$ \uline{et} $6,5$.
+		      \end{itemize}
+		\item Dans $5 × 1,2 = 6$ :
+		      \begin{itemize}
+			      \item $5$ et $1,2$ sont les \textbf{facteurs}.
+			      \item $6$ est le \textbf{produit} \uline{de} $5$ \uline{par} $1,2$.
+		      \end{itemize}
+		\item Dans $8 ÷ 5 = 1,6$ :
+		      \begin{itemize}
+			      \item $8$ est le \textbf{dividende}, $5$ est le \textbf{diviseur}.
+			      \item $1,6$ est le \textbf{quotient} \uline{de} $8$ \uline{par} $5$.
+		      \end{itemize}
+		\item Dans $\frac{6}{4} = 1,5$ :
+		      \begin{itemize}
+			      \item $6$ est le \textbf{numérateur}, $5$ est le \textbf{dénominateur}.
+			      \item $1,5$ est le \textbf{quotient} \uline{de} $6$ \uline{par} $4$.
+		      \end{itemize}
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}[Calcul sans parenthèses]
+	\begin{itemize}
+		\item Dans une expression sans parenthèses ne contenant que des \textit{additions} et des \textit{soustractions}, on effectue les calculs \textbf{de la gauche vers la droite}.
+		\item Dans une expression sans parenthèses ne contenant que des \textit{multiplications} et des \textit{divisions}, on effectue les calculs \textbf{de la gauche vers la droite}.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			A = & $\underbrace{6 + 3} - 2 - 1 $          \\
+			A = & $\phantom{6\ }\underbrace{9 - 2} - 1 $ \\
+			A = & $\phantom{6 +\ }\underbrace{7 - 1}$    \\
+			A = & $\phantom{6 + 3\ }6$
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			B = & $\underbrace{20 ÷ 2} × 3 ÷ 5 $           \\
+			B = & $\hspace{0.8em}\underbrace{10 × 3} ÷ 5 $ \\
+			B = & $\hspace{1.7em}\underbrace{30 ÷ 5}$      \\
+			B = & $\hspace{2.8em}6$
+		\end{tabular}
+	\end{minipage}
+\end{exemple}
+
+\begin{cours}[Calcul sans parenthèses 2]
+	Dans les autres expressions sans parenthèses, on effectue \textbf{d'abord} les \textit{multiplications} et les \textit{divisions}, puis les \textit{additions} et les \textit{soustractions}.
+
+	On dit que la multiplication et la division sont \textbf{prioritaires} par rapport à l'addition et la soustraction.
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			C = & $1 + \underbrace{2 × 4} - 5$           \\
+			C = & $\underbrace{1 + \phantom{2\ }8} - 5 $ \\
+			C = & $\hspace{1.3em}\underbrace{9 - 5}$     \\
+			C = & $\phantom{1 + 8}4$
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			D = & $\underbrace{4 ÷ 2} + 3 × 5$                      \\
+			D = & $\hspace{0.9em}2 + \underbrace{3 × 5}$            \\
+			D = & $\hspace{0.9em}\underbrace{2 + \hspace{0.7em}15}$ \\
+			D = & $\hspace{2em}17$
+		\end{tabular}
+	\end{minipage}
+\end{exemple}
+
+\begin{cours}[Calcul avec parenthèses]
+	Si une expression contient des morceaux entre parenthèses, on effectue \textbf{les calculs entre parenthèses en premier}.
+
+	Si il y a des parenthèses dans des parenthèses, on effectue
+	\textbf{les calculs entre le plus de parenthèses en premier}.
+
+	{\color{red} ⚠ Ajouter des parenthèses peut changer le résultat du calcul !}
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			E = & $2 × (\underbrace{1 + 3})$          \\
+			E = & $\underbrace{2 × \hspace{1.2em} 4}$ \\
+			E = & $\hspace{1.5em}8$
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			F = & $3 × (4 - (\underbrace{1 + 2}))$         \\
+			F = & $3 × (\underbrace{4 - \hspace{1.3em}3})$ \\
+			F = & $\underbrace{3 × \hspace{1.8em}7}$       \\
+			F = & $\hspace{1.5em}21$
+		\end{tabular}
+	\end{minipage}
+\end{exemple}
+
+\begin{exemple}
+	Ajouter des parenthèses peut changer le résultat d'un calcul :
+
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			G = & $\underbrace{3 - 2} - 1$           \\
+			G = & $\hspace{0.9em}\underbrace{1 - 1}$ \\
+			G = & $\hspace{1.7em}0$
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tabular}{ll}
+			H = & $3 - (\underbrace{2 - 1})$          \\
+			H = & $\underbrace{3 - \hspace{1.2em} 1}$ \\
+			H = & $\hspace{1.3em}2$
+		\end{tabular}
+	\end{minipage}
+\end{exemple}
+
+\begin{cours}[Calcul avec des fractions]
+	Dans une fraction, on considère le numérateur et le dénominateur comme des expressions entre parenthèses.
+\end{cours}
+
+\begin{exemple}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{align*}
+		I = & \frac{\squared{1 + 2} + 3}{1+1} & I\text{ peut aussi s'écrire }(1+2+3)÷(1+1) \\[0.5em]
+		I = & \frac{\squared{3 + 3}}{1+1}     &                                            \\[0.5em]
+		I = & \frac{6}{\squared{1+1}   }      &                                            \\[0.5em]
+		I = & \frac{6}{2}                     &                                            \\[0.5em]
+		I = & 3                               &
+	\end{align*}
+	\renewcommand{\arraystretch}{1}
+\end{exemple}
+
+\begin{cours}[Nature d'une expression]
+	La nature d'une expression est déterminée par l'opération à effectuer en \textbf{dernier}.
+\end{cours}
+
+\begin{exemple}
+	L'expression $4 + 5 × 2$ est une \textbf{somme}, car on effectue l'addition en dernier.
+
+	C'est la \textbf{somme} de $4$ et du \textbf{produit} de $5$ par $2$.
+\end{exemple}
+
+\end{document}

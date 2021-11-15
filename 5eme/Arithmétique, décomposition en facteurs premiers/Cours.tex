@@ -1,0 +1,227 @@
+% !TEX root = ./Cours.tex
+\documentclass[../€Cours-complet/Cours-complet]{subfiles}
+
+%%%%%%%%%%%%%%%%%%
+
+\titleorchapter{Multiples, diviseurs, nombres premiers}{1}
+
+%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\maketitleCours
+
+\begin{cours}
+	Si on a trois nombres $a$, $b$ et $c$ tels que
+	$$ \textcolor{blue}{a} × \textcolor{blue}{b} = \textcolor{red}{c} $$
+	On dit que
+	\begin{itemize}
+		\setlength\itemsep{0.3em}
+		\item $a$ et $b$ sont des \textcolor{blue}{\textbf{diviseurs}} de $c$.
+		\item $c$ est un \textcolor{red}{\textbf{multiple}} de $a$ et de $b$.
+		\item On dit que $c$ est \textbf{divisible} par $a$ et $b$.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	\begin{itemize}
+		\setlength\itemsep{0.3em}
+		\item 2 est un \textcolor{blue}{diviseur} de 6.
+		\item 7 est un \textcolor{blue}{diviseur} de 21.
+		\item 6 est un \textcolor{red}{multiple} de 2.
+		\item 6 est un \textcolor{red}{multiple} de 3.
+		\item 48 est un \textcolor{red}{multiple} de 4.
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}[Critères de divisibilité] \label{cours:criteres-de-divisibilite}
+	Parfois, on peut rapidement savoir si un nombre est un diviseur d'un autre nombre. \\
+	\begin{itemize}
+		\setlength\itemsep{0.3em}
+		\item Si le dernier chiffre d'un nombre est \textbf{pair}, ce nombre est un multiple de 2.
+		\item Si la somme des chiffres d'un nombre est \textbf{un multiple de 3}, ce nombre est un multiple de 3.
+		\item Si le dernier chiffre d'un nombre est \textbf{0 ou 5}, ce nombre est un multiple de 5.
+		\item Si la somme des chiffres d'un nombre est \textbf{un multiple de 9}, ce nombre est un multiple de 9.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	\begin{itemize}
+		\setlength\itemsep{0.3em}
+		\item 1244 est un multiple de 2, car 4 est un multiple de 2.
+		\item 546 est un multiple de 3, car $5 + 4 + 6 = 15$, qui est un multiple de 3.
+		\item 200, 15, 35... Sont des multiples de 5.
+		\item 279 est un multiple de 9, car $2 + 7 + 9 = 18$ est un multiple de 9.
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}
+	Une \textbf{division euclidienne} se fait entre deux nombres entiers $a$ et $b$. Il en résulte un \textbf{quotient} et un \textbf{reste}.
+	$$
+		\begin{array}{r|r}
+			a            & b               \\
+			\cline{2-2}
+			\vdots       & \text{quotient} \\
+			\text{reste} &
+		\end{array}
+	$$
+
+	$$ a = b × \text{quotient} + \text{reste} $$
+
+	On obtient le quotient en soustrayant $b$ aux chiffres de $a$.
+\end{cours}
+
+\begin{exemple}
+	Faisons par exemple la division euclidienne de 377 par 12 :
+	$$
+		\begin{array}{rrrrr|r}
+			                                        &   & 3                   & 7                         & 7                         & 12                                                             \\
+			\cline{6-6}
+			\textcolor{blue}{0} × 12 = 0 \to        & - & \textcolor{blue}{0} &                           &                           &                                                                \\
+			\cline{2-5}
+			                                        &   &                     &                           &                           & \textcolor{blue}{0}\textcolor{red}{3}\textcolor{OliveGreen}{1} \\
+			                                        &   & 3                   & 7                         &                           &                                                                \\
+			\textcolor{red}{3} × 12 = 36 \to        & - & \textcolor{red}{3}  & \textcolor{red}{6}        &                           &                                                                \\
+			\cline{2-5}
+			                                        &   &                     &                           &                           &                                                                \\
+			                                        &   &                     & 1                         & 7                         &                                                                \\
+			\textcolor{OliveGreen}{1} × 12 = 12 \to & - &                     & \textcolor{OliveGreen}{1} & \textcolor{OliveGreen}{2} &                                                                \\
+			\cline{2-5}
+			                                        &   &                     &                           &                           &                                                                \\
+			                                        &   &                     &                           & 5                         &
+		\end{array}
+	$$
+
+	On obtient ainsi un \textbf{quotient} de 31, et un \textbf{reste} de 5.
+\end{exemple}
+
+\begin{cours}
+	Un \textbf{nombre premier} est un nombre qui n'a que 1 et lui même comme diviseurs.
+\end{cours}
+
+Note: il y a une \uline{infinité} de nombres premiers.
+
+\begin{exemple}
+	2, 3, 5 et 7 sont des nombres premiers.
+\end{exemple}
+
+\newpage
+
+On peut obtenir tous les nombres premiers entre 1 et 100 en utilisant un \uline{crible d'Eratosthène} : \\
+
+\textbf{Règles :}
+\begin{itemize} \setlength\itemsep{0.3em}
+	\item Barrer le nombre 1.
+	\item Entourer le 2 (premier nombre non barré), puis barrer tous ses multiples.
+	\item Entourer le premier nombre ni entouré ni barré, et barrer tous ses multiples.
+	\item Répéter la consigne précédente, jusqu'à ce que tous les nombres soient soit entourés soit barrés.
+\end{itemize}
+\vspace{0.7cm}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	\xcancel{1}  & \circled{\ 2} & \circled{\ 3} & \xcancel{4}  & \circled{\ 5} & \xcancel{6}  & \circled{\ 7} & \xcancel{8}  & \xcancel{9}  & \xcancel{10}  \\ \hline
+	\circled{11} & \xcancel{12}  & \circled{13}  & \xcancel{14} & \xcancel{15}  & \xcancel{16} & \circled{17}  & \xcancel{18} & \circled{19} & \xcancel{20}  \\ \hline
+	\xcancel{21} & \xcancel{22}  & \circled{23}  & \xcancel{24} & \xcancel{25}  & \xcancel{26} & \xcancel{27}  & \xcancel{28} & \circled{29} & \xcancel{30}  \\ \hline
+	\circled{31} & \xcancel{32}  & \xcancel{33}  & \xcancel{34} & \xcancel{35}  & \xcancel{36} & \circled{37}  & \xcancel{38} & \xcancel{39} & \xcancel{40}  \\ \hline
+	\circled{41} & \xcancel{42}  & \circled{43}  & \xcancel{44} & \xcancel{45}  & \xcancel{46} & \circled{47}  & \xcancel{48} & \xcancel{49} & \xcancel{50}  \\ \hline
+	\xcancel{51} & \xcancel{52}  & \circled{53}  & \xcancel{54} & \xcancel{55}  & \xcancel{56} & \xcancel{57}  & \xcancel{58} & \circled{59} & \xcancel{60}  \\ \hline
+	\circled{61} & \xcancel{62}  & \xcancel{63}  & \xcancel{64} & \xcancel{65}  & \xcancel{66} & \circled{67}  & \xcancel{68} & \xcancel{69} & \xcancel{70}  \\ \hline
+	\circled{71} & \xcancel{72}  & \circled{73}  & \xcancel{74} & \xcancel{75}  & \xcancel{76} & \xcancel{77}  & \xcancel{78} & \circled{79} & \xcancel{80}  \\ \hline
+	\xcancel{81} & \xcancel{82}  & \circled{83}  & \xcancel{84} & \xcancel{85}  & \xcancel{86} & \xcancel{87}  & \xcancel{88} & \circled{89} & \xcancel{90}  \\ \hline
+	\xcancel{91} & \xcancel{92}  & \xcancel{93}  & \xcancel{94} & \xcancel{95}  & \xcancel{96} & \circled{97}  & \xcancel{98} & \xcancel{99} & \xcancel{100} \\ \hline
+\end{tabular}
+
+\begin{cours}[Décomposition en nombres premiers]
+	Tout nombre peut être \textbf{décomposé} en un produit de nombres premiers.
+
+	Pour trouver tous les diviseurs premiers d'un nombre, il faut essayer de diviser ce nombre par \textit{tous} les nombres premiers qui lui sont inférieurs, jusqu'à n'avoir que des nombres premiers.
+\end{cours}
+
+\begin{exemple}
+	\begin{itemize}
+		\item On veut décomposer 15 en nombres premiers :
+		      \begin{itemize}
+			      \item $15$ n'est pas un multiple de $2$.
+			      \item $15$ est un multiple de $3$: on écrit $15 = 3 × 5$.
+			      \item $3$ et $5$ sont tous les deux premiers, donc on peut s'arrêter là.
+		      \end{itemize}
+		\item On veut décomposer 18 en nombres premiers :
+		      \begin{itemize}
+			      \item $18$ est un multiple de $2$: on écrit $18 = 2 × 9$.
+			      \item $9$ n'est pas un multiple de $2$.
+			      \item $9$ est un multiple de $3$: on écrit $18 = 2 × 3 × 3$.
+			      \item $2$ et $3$ sont tous les deux premiers, donc on peut s'arrêter là.
+		      \end{itemize}
+		      On remarque que le même nombre premier peut apparaître \textbf{plusieurs fois} dans la décomposition !
+		\item On veut décomposer $231$ en nombres premiers :
+		      \begin{itemize}
+			      \item Grâce aux \hyperref[cours:criteres-de-divisibilite]{Critères de divisibilité}, on peut déterminer que $231$ et un multiple de $3$: on écrit $231 = 3 × 77$.
+			      \item $77$ n'est pas un multiple de $2$.
+			      \item $77$ n'est pas un multiple de $3$.
+			      \item $77$ n'est pas un multiple de $5$.
+			      \item $77$ est un multiple de $7$: on écrit $231 = 3 × 7 × 11$.
+			      \item $3$, $7$ et $11$ sont tous premiers, donc on peut s'arrêter là.
+		      \end{itemize}
+		\item $32 = 2 × 16 = 2 × 2 × 8 = 2 × 2 × 2 × 4 = 2 × 2 × 2 × 2 × 2$.
+	\end{itemize}
+\end{exemple}
+
+\begin{cours}
+	Le \textbf{PGCD} est le \textbf{Plus Grand Commun Diviseur} : c’est le plus grand nombre qui divise deux nombres donnés.
+
+	Pour le calculer :
+	\begin{itemize}
+		\item On fait la liste des diviseurs premiers des deux nombres.
+		\item On prend tous les nombres qui apparaissent dans les \textit{deux} listes, et on les multiplient entre eux.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	On veut calculer le PGCD de 12 et de 20 (noté PGCD(12, 20)) :
+	\begin{align*}
+		12 =  & \circled{2} × \circled{2} × 3 \\
+		      &                               \\
+		20  = & \circled{2} × \circled{2} × 5
+	\end{align*}
+
+	Donc PGCD(12, 20) = 2 × 2 = 4.
+\end{exemple}
+
+\begin{exemple}
+	On veut calculer le PGCD de 60 et de 126 :
+	\begin{align*}
+		60 =   & \circled{2} × 2 × \circled{3} × 5 \\
+		       &                                   \\
+		126  = & \circled{2} × \circled{3} × 3 × 7
+	\end{align*}
+
+	Donc PGCD(60, 126) = 2 × 3 = 6.
+\end{exemple}
+
+% Bonus 5eme 5
+% \begin{cours}
+% 	Le \uline{PPCM} est le \uline{Plus Petit Commun Multiple}. C’est le plus petit nombre qui est un multiple de deux nombres donnés.
+
+% 	Pour le trouver :
+% 	\begin{itemize}
+% 		\item On fait la liste des diviseurs premiers des deux nombres.
+% 		\item Chaque fois qu’un nombre apparaît dans les deux listes, on l’enlève (des deux listes!) et on le met de côté.
+% 		\item On multiplie les nombres mis de côté avec les nombres restants dans les listes.
+% 	\end{itemize}
+% \end{cours}
+
+% \begin{exemple}
+% 	On veut calculer le PPCM de 12 et de 30 :
+% 	\begin{align*}
+% 		12 =             & \cancel{2} × 2 × \cancel{3} \\
+% 		                 &                             \\
+% 		30 =             & \cancel{2} × \cancel{3} × 5 \\
+% 		\text{de côté} = & 2, 3
+% 	\end{align*}
+
+% 	Donc PPCM(12, 30) = 2 × 3 × 2 × 5 = 60.
+% \end{exemple}
+
+\end{document}

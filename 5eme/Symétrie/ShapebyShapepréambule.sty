@@ -1,0 +1,70 @@
+% !TeX program = lualatex
+
+% This is meant to be used with document class 'article' or 'beamer'.
+
+\ProvidesPackage{ShapebyShapepréambule}
+
+\usepackage{fontspec}           % Pour changer la police
+\setmainfont[Ligatures=TeX]{ComicSansMS} % Police avec support pour l'UTF-8
+\usepackage[math-style=french]{unicode-math}       % Symboles unicodes en mode math
+\setmathfont{TeX Gyre DejaVu Math}
+\setmathfont{TeX Gyre DejaVu Math}[version=bold,math-style=ISO,FakeBold = 3]
+\usepackage[french]{babel}    % françisation partielle de l'output
+\DecimalMathComma
+\usepackage[a4paper,top=1cm,bottom=1cm,left=2cm,right=2cm]{geometry}  % Mise en page, marges
+\makeatother
+\usepackage{amsthm}             % maths
+\usepackage{bm}                 % bold maths
+\usepackage{amsmath}            % maths
+\usepackage{graphicx}           % figures
+\usepackage{titlesec}           % permet de changer l'affichage des sections et autres
+\usepackage{color}              % couleurs rgb
+\usepackage[dvipsnames,table]{xcolor} % plus de couleurs
+\usepackage[tikz]{mdframed}     % boites fancy autour des théorèmes et autres
+\usepackage{contour}            % Pour souligner
+\usepackage{ulem}               % Pour souligner
+\usetikzlibrary{shadows}        % effet d'ombre sur les boites ('shadow = true')
+\usepackage{nopageno}           % pas de numéros de page
+\usepackage[makeroom]{cancel}   % texte barré
+\usepackage{hyperref}           % références
+\usepackage{multicol}           % avoir le texte en plusieurs colonnes
+\usepackage{caption}            % Custom image captions
+\usepackage{floatrow}           % ??? plusieurs images côte à côte
+\usepackage[thinlines]{easytable} % Table plus faciles à utiliser (environnement TAB)
+\usepackage[shortlabels]{enumitem}           % Pour facilement modifier les listes.
+\usepackage{tabularx} % meileurs tableaux
+\usepackage{luacode} % \begin{luacode} ... \end{luacode}
+\usepackage{wrapfig} % Texte autour d'images
+\usepackage{awesomebox} % Diverse boites de texte
+\usepackage{fontawesome} % Icône web (via \faicon{...})
+\usepackage[export]{adjustbox}
+
+% Symboles des listes
+\setlist[itemize,1]{label=•}
+\setlist[itemize,2]{label=○}
+\setlist[itemize,2]{label=■}
+\setlist[itemize,2]{label=□}
+
+
+\newcommand{\somme}[2]{\overset{#2}{\underset{#1}{\sum}}}
+\newcommand{\produit}[2]{\overset{#2}{\underset{#1}{\prod}}}
+\newcommand{\sommedirecte}[2]{\overset{#2}{\underset{#1}{\oplus}}}
+\renewcommand*{\proofname}{Preuve}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+
+% Commande de soulignage
+% On peut optionellement spécifier la couleur
+\newcommand{\myuline}[2][]{%
+	{#1\uline{\phantom{#2}}}%
+	\llap{\contour{white}{#2}}%
+}
+
+% Pour entourer un nombre
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Pour entourer un nombre par un carré
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+	\node[shape=rectangle,draw,inner sep=2pt] (char) {#1};}}

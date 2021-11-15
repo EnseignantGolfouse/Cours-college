@@ -1,0 +1,78 @@
+\ProvidesPackage{préambule-scratch}
+
+\usepackage{xargs}
+
+\definecolor{scratchBlockUn}{RGB}{230, 230, 230}
+\definecolor{scratchBlockDeux}{RGB}{180, 180, 180}
+\newcommand{\scratchCurrentBlockColor}{}
+
+
+\newcommand{\racineDeDeux}{1.41421}
+
+\newcommand{\scratchBlockHauteur}{0.9}
+\newcommand{\scratchBlockLargeur}{9}
+\newcommand{\scratchEncochePosition}{1.5}
+\newcommand{\scratchEncocheHauteur}{0.15}
+\newcommand{\scratchArcStartRadius}{2}
+
+\newcounter{scratchCodeBlockCounter}
+\newcounter{scratchCodeBlockCounterBinary}
+\setcounter{scratchCodeBlockCounter}{0}
+\setcounter{scratchCodeBlockCounterBinary}{0}
+
+\newcommandx{\startInstruction}[2][1={}]{
+	\coordinate (ScratchBlockStart) at (0,-\thescratchCodeBlockCounter*\scratchBlockHauteur);
+	\ifthenelse{\equal{#1}{}}{
+		\ifthenelse{\equal{\thescratchCodeBlockCounterBinary}{0}}{
+			\addtocounter{scratchCodeBlockCounterBinary}{1}
+			\renewcommand{\scratchCurrentBlockColor}{scratchBlockUn}
+		}{
+			\addtocounter{scratchCodeBlockCounterBinary}{-1}
+			\renewcommand{\scratchCurrentBlockColor}{scratchBlockDeux}
+		}
+	}{
+		\renewcommand{\scratchCurrentBlockColor}{#1}
+	}
+	\draw[fill=\scratchCurrentBlockColor] (ScratchBlockStart)
+		arc (135:45:\scratchArcStartRadius)
+		-- ++(\scratchBlockLargeur-\scratchArcStartRadius*\racineDeDeux,0)
+		-- ++(0,-\scratchBlockHauteur)
+		-- ++(-\scratchBlockLargeur+\scratchEncochePosition+2.5*\scratchEncocheHauteur,0)
+		-- ++(-\scratchEncocheHauteur,-\scratchEncocheHauteur)
+		-- ++(-\scratchEncocheHauteur/2,0)
+		-- ++(-\scratchEncocheHauteur,\scratchEncocheHauteur)
+		-- ++(-\scratchEncochePosition,0)
+		-- ++(0,\scratchBlockHauteur);
+	\node[anchor=west] at (0.5,-\thescratchCodeBlockCounter*\scratchBlockHauteur - \scratchBlockHauteur/2) {#2};
+	\addtocounter{scratchCodeBlockCounter}{1}
+}
+
+\newcommandx{\instruction}[3][1={}, 3={\scratchBlockLargeur}]{
+	\coordinate (ScratchBlockStart) at (0,-\thescratchCodeBlockCounter*\scratchBlockHauteur);
+	\ifthenelse{\equal{#1}{}}{
+		\ifthenelse{\equal{\thescratchCodeBlockCounterBinary}{0}}{
+			\addtocounter{scratchCodeBlockCounterBinary}{1}
+			\renewcommand{\scratchCurrentBlockColor}{scratchBlockUn}
+		}{
+			\addtocounter{scratchCodeBlockCounterBinary}{-1}
+			\renewcommand{\scratchCurrentBlockColor}{scratchBlockDeux}
+		}
+	}{
+		\renewcommand{\scratchCurrentBlockColor}{#1}
+	}
+	\draw[fill=\scratchCurrentBlockColor] (ScratchBlockStart)
+		-- ++(\scratchEncochePosition,0)
+		-- ++(\scratchEncocheHauteur,-\scratchEncocheHauteur)
+		-- ++(\scratchEncocheHauteur/2,0)
+		-- ++(\scratchEncocheHauteur,\scratchEncocheHauteur)
+		-- ++(#3-\scratchEncochePosition-2.5*\scratchEncocheHauteur,0)
+		-- ++(0,-\scratchBlockHauteur)
+		-- ++(-#3+\scratchEncochePosition+2.5*\scratchEncocheHauteur,0)
+		-- ++(-\scratchEncocheHauteur,-\scratchEncocheHauteur)
+		-- ++(-\scratchEncocheHauteur/2,0)
+		-- ++(-\scratchEncocheHauteur,\scratchEncocheHauteur)
+		-- ++(-\scratchEncochePosition,0)
+		-- ++(0,\scratchBlockHauteur);
+	\node[anchor=west] at (0.5,-\thescratchCodeBlockCounter*\scratchBlockHauteur - \scratchBlockHauteur/2) {#2};
+	\addtocounter{scratchCodeBlockCounter}{1}
+}

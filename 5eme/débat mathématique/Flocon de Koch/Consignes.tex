@@ -1,0 +1,80 @@
+\documentclass[a4paper,11pt,landscape,twocolumn]{article}
+
+\usepackage{préambule}
+\usetikzlibrary{lindenmayersystems}
+\usepackage{tcolorbox}
+\usepackage{clipboard}
+
+\setlength{\columnsep}{2cm}
+
+\tikzset{
+  Koch curve/.style = {
+    l-system={
+      rule set={F -> F+F--F+F},
+      axiom=F,
+      step=1pt,
+      angle=60,
+      #1
+    }
+  }
+}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+	\begin{center}
+		\LARGE
+		\@title
+		\vspace{1em}
+	\end{center}
+}
+\makeatother
+
+\title{Flocon de Koch}
+\date{}
+\author{}
+
+\begin{document}
+
+\Copy{Consigne}{
+	\maketitle
+
+	\begin{center}
+
+		\begin{tikzpicture}
+			\draw[Koch curve={order=2,step=180pt/3^(2)}] l-system;
+		\end{tikzpicture}
+	\end{center}
+
+	\vspace{2em}
+
+	\hspace{-2em} 1. Premier dessin
+	\begin{tcolorbox}
+		\begin{itemize}
+			\item[a.] Tracer un segment.
+			\item[b.] Le découper en trois parties égales.
+			\item[c.] Poser un triangle équilatéral sur le segment du milieu, et effacer sa base.
+		\end{itemize}
+	\end{tcolorbox}
+	Si la longueur du segment de base est donnée, quelle est la longueur de la nouvelle figure ?
+
+	\vspace{0.5em}
+
+	\hspace{-2em} 2. On recommence les étapes b. et c. sur chaque petit segment ;
+
+	puis sur chacun des segments de cette nouvelle figure ;
+
+	et ainsi de suite ...
+	\begin{itemize}
+		\item[$∙$] Quelle est la longueur de la 4\textsuperscript{ème} figure ?
+		\item[$∙$] Quelle est la longueur de la 10\textsuperscript{ème} figure ?
+		\item[$∙$] Quelle est la longueur de la 103\textsuperscript{ème} figure ?
+		\item[$∙$] Quelle est la longueur de la n\textsuperscript{ème} figure ?
+	\end{itemize}
+}
+
+\newpage
+
+\Paste{Consigne}
+
+
+\end{document}

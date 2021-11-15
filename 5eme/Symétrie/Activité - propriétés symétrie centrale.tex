@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\usetikzlibrary{calc,positioning}
+
+\addtolength{\oddsidemargin}{-0.5cm}
+\addtolength{\evensidemargin}{-0.5cm}
+\addtolength{\textwidth}{1cm}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+{\scriptsize colle dans ton cahier d'exercices, et écrit sur la feuille}
+
+	\begin{center}
+		\LARGE
+		\uline{\@title}
+		\vspace{1em}
+	\end{center}
+}
+\makeatother
+
+\title{Exercices symétrie centrale}
+\date{}
+\author{}
+
+\begin{document}
+
+\maketitle
+\begin{attention}
+	Fais les constructions en utilisant une règle et un compas.
+\end{attention}
+
+\begin{exercice}
+	\begin{enumerate}
+		\item Trace le symétrique de A et de B par rapport à O.
+		\item Trace le symétrique de la droite $(d)$ par rapport au point O.
+		\item Que peux-tu dire de ces deux droites ? \vspace{2em}
+	\end{enumerate}
+
+	\begin{tikzpicture}
+		\coordinate (O) at (0,0);
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate[rotate around={180:(O)}] (A') at (A);
+		\coordinate[rotate around={180:(O)}] (B') at (B);
+
+		\node[right = 0.2cm of O] {O};
+		\node[above left = 0.2cm of A] {A};
+		\node[above left = 0.2cm of B] {B};
+		\draw[fill] (O) circle (2pt);
+		\draw[fill] (A) circle (2pt);
+		\draw[fill] (B) circle (2pt);
+		\draw ($(A) + (A) - (B)$) -- ($(B) + (B) - (A)$) node[anchor=south] {$(d)$};
+
+		% \node[above left = 0.2cm of A'] {A'};
+		% \node[above left = 0.2cm of B'] {B'};
+		% \draw[fill] (A') circle (2pt);
+		% \draw[fill] (B') circle (2pt);
+		\draw[opacity=0] ($(A') + (A') - (B')$) -- ($(B') + (B') - (A')$) node[anchor=south] {$(d')$};
+	\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+	\begin{enumerate}
+		\item Construit C et D les symétriques de A et B par rapport à I.
+		\item Construit E et F les symétriques de A et B par rapport à J.
+		\item Trace les \textbf{segments} [AB], [CD] et [EF].
+		\item Que peux-tu dire de ces trois segments ? \vspace{2em}
+	\end{enumerate}
+	\begin{tikzpicture}
+		\coordinate (A) at (-1,1);
+		\coordinate (B) at (2,2);
+		\coordinate (I) at (0,0);
+		\coordinate (J) at (3,-1);
+		\coordinate[rotate around={180:(I)}] (C) at (A);
+		\coordinate[rotate around={180:(I)}] (D) at (B);
+		\coordinate[rotate around={180:(J)}] (E) at (A);
+		\coordinate[rotate around={180:(J)}] (F) at (B);
+
+		\foreach \P in {A,B,I,J} {
+				\node[above = 0.2cm of \P] {\P};
+				\draw[fill] (\P) circle (2pt);
+			}
+
+		% \foreach \P in {C,D,E,F} {
+		% 		\node[above = 0.2cm of \P] {\P};
+		% 		\draw[fill] (\P) circle (2pt);
+		% 	}
+		\draw[opacity=0] (A) -- (B) node[anchor=west] {$(d)$};
+		\draw[opacity=0] (C) -- (D) node[anchor=east] {$(d')$};
+		\draw[opacity=0] (E) -- (F) node[anchor=east] {$(d'')$};
+	\end{tikzpicture}
+\end{exercice}
+
+\end{document}

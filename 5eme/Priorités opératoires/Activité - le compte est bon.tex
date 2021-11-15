@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+
+\title{Activité : le compte est bon}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{greybox}
+	Fait tes recherches sur le cahier d'exercices avant de noter sur la feuille !
+\end{greybox}
+
+\begin{exercice}
+	Remplir les trous avec $+, -$ ou $×$ pour que les égalités soient justes :
+	% 6 - 5 + 2 × 3
+	% 5 + 5 × 6 - 8 + 3
+	$$  6 \hspace{2em} 5 \hspace{2em} 2 \hspace{2em} 3 = 7
+		\hspace{4em} 5 \hspace{2em} 5 \hspace{2em} 6 \hspace{2em} 8 \hspace{2em} 3 = \the\numexpr 5 + 5 * 6 - 8 + 3 \relax $$
+\end{exercice}
+
+\begin{exercice}
+	Remplir les trous avec $+, -$ ou $×$ pour que l'égalité soit juste :
+	% 1 × 1 + 1 × 1 + 1 × 1
+	$$ 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 = 3 $$
+
+	Peut-on obtenir un nombre plus grand que 6 ? Pourquoi ?
+	% Non, car :
+	%   - Les multiplications se font en premier, et ne laissent que des '1'. Elles ne font donc que 'perdre' un nombre.
+	%   - Pour avoir le nombre le plus grand possible, il faut donc que des additions, et on obtient 6.
+\end{exercice}
+
+\centering\squared{\textbf{Note le cours : calcul avec parenthèses}}
+
+\vspace{2em}
+
+\begin{exercice}
+	En utilisant les parenthèses et les symboles $+, -$ ou $×$, fait en sorte que l'égalité soit juste :
+	% (1 + 1) × (1 + 1) × (1 + 1)
+	$$ 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 1 = 8 $$
+\end{exercice}
+
+\begin{exercice}
+	En utilisant les parenthèses et les symboles $+, -, ×$ ou $÷$, fait en sorte que les égalités soient justes :
+	% (4 + 1) × 3 = 15
+	% 5 ÷ (1 + 1) + 3 × 4 = 14,5
+	% (1 + 2 × 5 - 9) × 8 = 16
+	% ((1 + 2) × 5 - 9) × 8 = 48
+	\begin{align*}
+		4 \hspace{2em} 1 \hspace{2em} 3 = 15 \hspace{4em}                              & 5 \hspace{2em} 1 \hspace{2em} 1 \hspace{2em} 3 \hspace{2em} 4 = 14,5 \\ & \\
+		1 \hspace{2em} 2 \hspace{2em} 5 \hspace{2em} 9 \hspace{2em} 8 = 16 \hspace{4em} & 1 \hspace{2em} 2 \hspace{2em} 5 \hspace{2em} 9 \hspace{2em} 8 = 48
+	\end{align*}
+\end{exercice}
+
+\end{document}

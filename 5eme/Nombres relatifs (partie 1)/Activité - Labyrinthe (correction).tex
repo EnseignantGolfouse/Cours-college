@@ -1,0 +1,179 @@
+\documentclass[a4paper,11pt,professionalfonts]{beamer}
+
+\usepackage{préambule}
+\usetikzlibrary{calc}
+
+\DeclareFontFamily{U}{skulls}{}
+\DeclareFontShape{U}{skulls}{m}{n}{ <-> skull }{}
+\newcommand{\skull}{\text{\usefont{U}{skulls}{m}{n}\symbol{'101}}}
+
+\newcommand{\myAdd}[2]{\directlua{tex.print(#1 + #2)}}
+
+\begin{luacode}
+	function print_items(points)
+		for _, p in ipairs(points) do
+			tex.sprint("\\item (", p.x, "; ", p.y, ")")
+		end
+	end
+
+	function print_path(points, frame)
+		tex.sprint("\\draw")
+		if frame ~= nil then
+			tex.sprint(frame)
+		end
+		tex.sprint("[red,ultra thick,->] ")
+		for i, p in ipairs(points) do
+		 	if i ~= 1 then
+		 		tex.sprint(" -- ")
+		 	end
+		 	tex.sprint("(", p.x, ",", p.y, ")")
+		end
+		tex.sprint(";")
+	end
+\end{luacode}
+
+\begin{document}
+
+\begin{frame}
+	\begin{center}
+		\large
+
+		Labyrinthes : Correction
+	\end{center}
+\end{frame}
+
+\directlua{
+pointsAlpha = {
+		{ x = 1, y = 1 },
+		{ x = 1, y = 2 },
+		{ x = 3, y = 2 },
+		{ x = 3, y = 4 },
+		{ x = 2, y = 4 },
+		{ x = 2, y = 5 },
+		{ x = 4, y = 5 },
+		{ x = 4, y = 3 },
+		{ x = 5, y = 3 },
+		{ x = 5, y = 5 },
+	}
+
+pointsBeta = {
+{ x = -1.5, y = -1.5 },
+{ x = -1.5, y = -1 },
+{ x = -0.5, y = -1 },
+{ x = -0.5, y = -0.5 },
+{ x = -1, y = -0.5 },
+{ x = -1, y = 1 },
+{ x = 0, y = 1 },
+{ x = 0, y = 0.5 },
+{ x = 1.5, y = 0.5 },
+{ x = 1.5, y = 0 },
+{ x = 0.5, y = 0 },
+{ x = 0.5, y = -0.5 },
+{ x = 2, y = -0.5 },
+}
+
+pointsGamma = {
+{ x = -7, y = 6 },
+{ x = -2, y = 1 },
+{ x = -2, y = -2 },
+{ x = -6, y = -2 },
+{ x = -6, y = -4 },
+{ x = 0, y = -4 },
+{ x = 0, y = 0 },
+{ x = 3, y = 0 },
+{ x = 6, y = 3 },
+{ x = 6, y = 6 },
+{ x = 7, y = 6 },
+}
+}
+
+\begin{frame}
+	\begin{center}
+		\textbf{Labyrinthe} $\boldmath{α}$: \vspace{1em}
+
+		\begin{tikzpicture}
+			\draw[very thick,->] (0,0) -- (5.5,0);
+			\draw[very thick,->] (0,0) -- (0,5.5);
+			\node[below left] at (0,0) {0};
+			\foreach \x in {1,...,5} {
+					\draw[thick] (\x,0) -- (\x,-0.2) node[below] {\x};
+					\draw[thick] (0,\x) -- (-0.2,\x) node[left] {\x};
+				}
+
+			\draw[ultra thick] (0.5,0.5) -- ++(0,5) -- ++(4,0) -- ++(0,-2);
+			\draw[ultra thick] (0.5,2.5) -- ++(2,0);
+			\draw[ultra thick] (1.5,3.5) -- ++(0,2);
+			\draw[ultra thick] (1.5,1.5) -- ++(2,0) -- ++(0,3) -- ++(-1,0);
+			\draw[ultra thick] (1.5,0.5) -- ++(4,0) -- ++(0,5);
+			\draw[ultra thick] (4.5,0.5) -- ++(0,2);
+
+			\directlua{print_path(pointsAlpha, "<2->")}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\textbf{Labyrinthe} $\boldmath{β}$: \vspace{1em}
+
+		\begin{tikzpicture}[scale=2]
+			\draw[gray,ultra thin,->] (-2.25,0) -- (2.25,0);
+			\draw[gray,ultra thin,->] (0,-1.75) -- (0,1.75);
+			\node[below left] at (0,0) {\scriptsize 0};
+
+			\draw[very thin] (-2,0) -- ++(0,-0.1) node[below] {\scriptsize -2};
+			\draw[very thin] (-1,0) -- ++(0,-0.1) node[below] {\scriptsize -1};
+			\draw[very thin] (1,0) -- ++(0,-0.1) node[below] {\scriptsize 1};
+			\draw[very thin] (2,0) -- ++(0,-0.1) node[below] {\scriptsize 2};
+
+			\draw[very thin] (0,-1) -- ++(-0.1,0) node[left] {\scriptsize -1};
+			\draw[very thin] (0,1) -- ++(-0.1,0) node[left] {\scriptsize 1};
+
+			\draw[ultra thick] (-1.75,-1.25) -- ++(0,2.5) -- ++(3.5,0) -- ++(0,-1.5) -- ++(-1,0);
+			\draw[ultra thick] (-1.25,-1.25) -- ++(3,0) -- ++(0,0.5);
+			\draw[ultra thick] (-1.75,-0.75) -- ++(1,0);
+			\draw[ultra thick] (-1.25,-0.75) -- ++(0,1.5);
+			\draw[ultra thick] (-0.75,-0.25) -- ++(0,1);
+			\draw[ultra thick] (-0.25,-1.25) -- ++(0,2);
+			\draw[ultra thick] (0.25,-1.25) -- ++(0,1.5) -- ++(1,0);
+			\draw[ultra thick] (0.75,-1.25) -- ++(0,0.5) -- ++(0.5,0);
+			\draw[ultra thick] (0.25,1.25) -- ++(0,-0.5);
+			\draw[ultra thick] (1.25,1.25) -- ++(0,-0.5) -- ++(-0.5,0);
+
+			\directlua{print_path(pointsBeta, "<2->")}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\textbf{Labyrinthe} $\boldmath{γ}$: \vspace{1em}
+
+		\begin{tikzpicture}[scale=0.55]
+			\draw[gray,ultra thin,->] (-9,0) -- (9,0);
+			\draw[gray,ultra thin,->] (0,-6) -- (0,8);
+			\node[below left] at (0,0) {\scriptsize 0};
+
+			\foreach \x in {-6,-4,-2,2,4,6} {
+					\draw[very thin] (\x,0) -- (\x,-0.15) node[below] {\scriptsize \x};
+				}
+
+			\foreach \y in {-4,-2,2,4,6} {
+					\draw[very thin] (0,\y) -- (-0.15,\y) node[left] {\scriptsize \y};
+				}
+
+			\draw[ultra thick] (-5,-1) -- (-3,-1) -- (-3,1) -- (-7, 5) -- (-7,-5) -- (7,-5) -- (7,5);
+			\draw[ultra thick] (-5,-3) -- (-1,-3) -- (-1,1) -- (3,1) -- (5,3) -- (5,5) -- (-1,5) -- (-3,7);
+			\draw[ultra thick] (1,-1) -- (1,-5);
+			\draw[ultra thick] (3,-1) -- (3,-3) -- (5,-3) -- (5,1);
+			\draw[ultra thick] (3,3) -- (-3,3) -- (-7,7) -- (7,7);
+
+			\node<2->[red] at (2,4) {\large \circled{\skull}};
+			\node<2->[red] at (2,-2) {\large \circled{\skull}};
+
+			\directlua{print_path(pointsGamma, "<3->")}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\end{document}

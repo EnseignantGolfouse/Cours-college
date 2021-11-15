@@ -1,0 +1,91 @@
+% !TEX root = ./Cours.tex
+\documentclass[../€Cours-complet/Cours-complet]{subfiles}
+
+\titleorchapter{Triangles et cercles}{8}
+
+\begin{document}
+
+\maketitleCours
+
+\section{Inégalité triangulaire}
+
+\begin{cours}[Inégalité triangulaire]
+	Dans un triangle, la longueur d'un côté est \textbf{toujours inférieure} à la somme des longueurs des deux autres côtés.
+\end{cours}
+
+\begin{exemple}
+	\begin{tikzpicture}
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (4,3);
+		\coordinate (C) at (8,0);
+		\coordinate (AB) at (10,2.5);
+		\coordinate (BC) at (10,1.5);
+		\coordinate (AC) at (10,0.5);
+
+		\draw (A) node[left] {A} -- (B) node[above] {B} -- (C) node[right] {C} -- cycle;
+		\node[right] at (AB) {AB = 5cm};
+		\node[right] at (BC) {BC = 5cm};
+		\node[right] at (AC) {AC = 8cm};
+	\end{tikzpicture}
+
+	On a
+	\begin{itemize}
+		\item AB < BC + AC
+		\item BC < AB + AC
+		\item AC < AB + BC
+	\end{itemize}
+\end{exemple}
+
+\section{Médiatrice}
+
+\begin{cours}[Médiatrice]
+	La \textbf{médiatrice} d'un segment [AB] est la droite qui
+	\begin{itemize}
+		\item Passe par le milieu de [AB].
+		\item Est perpendiculaire à [AB].
+	\end{itemize}
+
+	Tous les points de la médiatrice sont alors \textbf{à égale distance} de A et B.
+\end{cours}
+
+\begin{cours}
+	Dans un triangle ABC, les médiatrices des trois côtés se rencontrent \textbf{en un seul point}.
+
+	Ce point est alors \textbf{à égale distance} de A, B et C.
+\end{cours}
+
+\section{Hauteurs}
+
+\begin{cours}[Hauteur issue d'un sommet]
+	Dans un triangle, la \textbf{hauteur issue d'un sommet} est la droite
+	\begin{itemize}
+		\item passant par ce sommet ;
+		\item perpendiculaire au côté opposé.
+	\end{itemize}
+\end{cours}
+
+\begin{exemple}
+	\begin{minipage}{0.58\linewidth}
+		\begin{tikzpicture}
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (8,0);
+			\coordinate (C) at (5,3);
+			\coordinate (H) at (5,0);
+
+			\foreach \P/\dir in {A/left, B/right, C/above right, H/below right} {
+					\node[\dir] at (\P) {\P};
+				}
+
+			\draw (A) -- (B) -- (C) -- cycle;
+			\draw ($(C) + (0,1)$) -- ($(H) - (0,1)$);
+			\draw (H) ++(0.3,0) -- ++(0,0.3) -- ++(-0.3,0);
+		\end{tikzpicture}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.35\linewidth}
+		Ici, la hauteur issue de C est la droite (CH).
+	\end{minipage}
+\end{exemple}
+
+
+\end{document}

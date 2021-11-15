@@ -1,0 +1,55 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{préambule-scratch}
+
+\TitreDActivite{Scratch : variables}
+
+\begin{document}
+
+\maketitle
+
+\section*{Compteur de temps}
+
+On va reprendre un projet précédent, et rajouter un \uline{compteur de temps}.
+
+\begin{itemize}
+	\item Ouvre un des projets précédents, et sélectionne le personnage du joueur.
+	\item Va dans la catégorie \textit{variables}, et crée un nouvelle variable, que tu nommeras “temps”.
+	\item Utilise les instructions suivantes :
+
+	      \begin{center}
+		      \begin{tikzpicture}
+			      \startInstruction{Quand \faFlag\  est cliqué}
+			      \instruction{Mettre \squared{temps ▿} à \circled{0}}
+			      \instruction{Dis \squared{temps} pendant \circled{2} secondes}
+			      \instruction{Mettre \squared{temps ▿} à \circled{1}}
+			      \instruction{Dis \squared{temps} pendant \circled{2} secondes}
+		      \end{tikzpicture}
+	      \end{center}
+
+	      \warningbox{
+		      N'écris pas “temps” dans les blocks : à la place, utilise le block rond dont le nom est “temps”.
+	      }
+
+	      Qu'observes-tu ? \dotfill
+	\item Utilise la variable “temps” pour créer un compteur de temps : lorsque le jeu se termine, affiche ce compteur.
+\end{itemize}
+
+\section*{Devine le nombre}
+
+Utilise les variable pour faire un jeu \textbf{devine le nombre}.
+
+\uline{Règles} :
+\begin{enumerate}
+	\item L'ordinateur choisit un nombre entre 1 et 100. (Va voir dans la catégorie \textit{Opérateurs}).
+	\item Il demande un nombre au joueur (catégorie \textit{Capteurs}) :
+	      \begin{itemize}
+		      \item Si le joueur donne le bon nombre, c'est gagné.
+		      \item Si le nombre est trop petit, l'ordinateur dit “Trop petit !”.
+		      \item Si le nombre est trop grand, l'ordinateur dit “Trop grand !”.
+	      \end{itemize}
+	\item L'ordinateur recommence la deuxième étape jusqu'à ce que le joueur trouve le nombre choisi.
+\end{enumerate}
+
+\end{document}

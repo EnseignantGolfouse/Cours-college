@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+
+\setmathfont[range=it]{Tex Gyre Schola Math}
+
+\TitreDActivite{Activité : Abonnement}
+
+\newcommand{\correction}[1]{{\color{red}#1}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enonce}
+	Ivan et Kevin vont souvent regarder des films ensemble.
+
+	\begin{itemize}
+		\item Ivan paie à chaque fois sa place à plein tarif : 7€ la place.
+		\item Kevin, lui, a un abonnement : il l'a acheté 20€, mais il paie chaque place 4,50€.
+	\end{itemize}
+\end{enonce}
+
+\begin{enumerate}
+	\item Si ils vont voir 3 films :
+	      \begin{enumerate}
+		      \item Combien paie Ivan ? \correction{21€}
+		      \item Combien paie Kevin ? \correction{33,50€}
+		      \item Lequel paie le moins ? \correction{Ivan}
+	      \end{enumerate}
+	\item Si ils vont voir 10 films :
+	      \begin{enumerate}
+		      \item Combien paie Ivan ? \correction{70€}
+		      \item Combien paie Kevin ? \correction{65€}
+		      \item Lequel paie le moins ? \correction{Kevin}
+	      \end{enumerate}
+	\item On appelle $n$ le nombre de films qu'ils vont voir.
+	      \begin{enumerate}
+		      \item Écrire une expression pour le prix que paie Ivan. \correction{n × 7€}
+		      \item Écrire une expression pour le prix que paie Kevin. \correction{20€ + n × 4,50€}
+	      \end{enumerate}
+	\item Remplir le tableau suivant :
+
+	      \begin{center}
+		      \renewcommand{\arraystretch}{1.5}
+		      \begin{tabular}{|c|c|c|}
+			      \hline
+			      Nombre de places & Prix pour Ivan   & Prix pour Kevin
+			      \\ \hline
+			      3                & \correction{21€} & \correction{33,50€}
+			      \\ \hline
+			      4                & \correction{28€} & \correction{38€}
+			      \\ \hline
+			      5                & \correction{35€} & \correction{42,50€}
+			      \\ \hline
+			      6                & \correction{42€} & \correction{47€}
+			      \\ \hline
+			      7                & \correction{49€} & \correction{51,50€}
+			      \\ \hline
+			      8                & \correction{56€} & \correction{56€}
+			      \\ \hline
+			      9                & \correction{63€} & \correction{60,50€}
+			      \\ \hline
+			      10               & \correction{70€} & \correction{65€}
+			      \\ \hline
+		      \end{tabular}
+	      \end{center}
+
+	      Y-a-t'il un nombre de places, pour lequel les deux paie le même prix ? \correction{8}
+	\item Les expressions $7n$ et $20 + 4{,}5n$ sont elles toujours égales ? \correction{Non, elles ne sont pas égales pour $n = 3$ par exemple.}
+	\item Les expressions $7n$ et $20 + 4{,}5n$ sont elles égales pour un $n$ particulier ? \correction{Oui, elles sont égales pour $n = 8$.}
+\end{enumerate}
+
+\end{document}

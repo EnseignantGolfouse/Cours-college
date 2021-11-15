@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt,gray]{article}
+
+\usepackage{préambule}
+\usepackage{clipboard}
+\usetikzlibrary{calc,positioning}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{document}
+
+\Copy{Cours}{
+	\begin{cours}[Vocabulaire]
+
+		\begin{center}
+			\newcommand{\rectWidth}{3}
+			\newcommand{\rectHeight}{2}
+			\begin{tikzpicture}
+				\coordinate (A) at (0,0);
+				\coordinate (B) at ($(A) + (\rectWidth,0)$);
+				\coordinate (C) at ($(A) + (\rectWidth,\rectHeight)$);
+				\coordinate (D) at ($(A) + (0,\rectHeight)$);
+
+				\coordinate (E) at ($(A) + (1,1)$);
+				\coordinate (F) at ($(E) + (\rectWidth,0)$);
+				\coordinate (G) at ($(E) + (\rectWidth,\rectHeight)$);
+				\coordinate (H) at ($(E) + (0,\rectHeight)$);
+
+				\draw[ultra thin,fill=blue!30,draw=transparent] (B) -- (F) -- (G) -- (C) -- (B);
+
+				\draw[ultra thin] (B) -- (C) -- (D) -- (A) -- (B) -- (F) -- (G) -- (H) -- (D)
+				(C) -- (G);
+				\draw[thin,dotted] (E) -- (A)
+				(E) -- (H)
+				(E) -- (F);
+
+				\foreach \p / \pos in {
+						A/below left,
+						B/below right,
+						C/above left,
+						D/above left,
+						E/below,
+						F/below right,
+						G/above right,
+						H/above} {
+						\node[\pos] at (\p) {\p};
+					}
+
+				\draw[draw=green,ultra thick] (D) -- (H);
+				\node at (A) {\color{red}∙};
+
+				\draw[->] ($(A) - (2,0)$) node[left] {{\color{red}............} A} -- ($(A) - (0.5,0)$);
+				\draw[->] ($(D) + (-1,1.5)$) node[left] {{\color{green}............} [DH]} -- ($(D) + (0.3,0.7)$);
+				\draw[->] ($(F) + (1,0.5)$) node[right] {{\color{blue}............} BFGC} -- ($(F) + (-0.5,0.5)$);
+			\end{tikzpicture}
+		\end{center}
+
+		\vspace{1em}
+		La figure ci-dessus est un .................................. .
+	\end{cours}
+}
+
+\vspace{2em}
+\Paste{Cours}
+
+\vspace{2em}
+\Paste{Cours}
+
+\end{document}
